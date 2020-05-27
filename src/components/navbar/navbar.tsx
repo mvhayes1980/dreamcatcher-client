@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import Home from '../site/home';
 import {
     BrowserRouter as Router,
     Route,
@@ -9,7 +10,7 @@ import {
 import dreamcatcher from '../../assests/dreamcatcher.png';
 
 export default class NavBar extends React.Component{
-    public render() {
+    render() {
         return(
             <Router>
                 <Nav>
@@ -20,6 +21,14 @@ export default class NavBar extends React.Component{
                     <div className="navtabs">
                         <NavLink to="/test"><NavItem>Test</NavItem></NavLink>
                     </div>
+
+
+                    <Route path="/" exact render={ () => {
+                        return( <Home/>)
+                    }}/>
+                    {/* <Route path="/test" exact strict render={ () => {
+                        return( <Test/> )
+                    }}/> */}
                 </Nav>
             </Router>
         )

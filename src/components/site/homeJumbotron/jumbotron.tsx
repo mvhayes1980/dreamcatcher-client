@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 import dreams from '../../assests/dreamcatcher.gif';
 
 export default class Home extends React.Component{
-    public render() {
+    render() {
         return(
             <div className='mainDiv'>
                 <div className="body">
