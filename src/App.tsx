@@ -4,14 +4,18 @@ import Auth from './components/site/auth/Auth';
 import './App.css';
 
 type AppState = {
-  sessionToken: string | null
+  sessionToken: string | null,
+  isAdmin: boolean,
+  nsfwOk: boolean
 }
 
 class App extends React.Component<{}, AppState> {
   constructor(props: string) {
     super(props)
     this.state = {
-      sessionToken: ""
+      sessionToken: "",
+      isAdmin: false,
+      nsfwOk: false
     }
 
   }
@@ -20,7 +24,12 @@ class App extends React.Component<{}, AppState> {
     if(localStorage.getItem('dreamSessionToken')) {
       this.setState({sessionToken: localStorage.getItem('dreamSessionToken')});
       console.log("sessionToken:", localStorage.getItem('dreamSessionToken'));
+
+
+
     }
+
+
   }
 
   updateToken(newToken: string) {
@@ -31,16 +40,15 @@ class App extends React.Component<{}, AppState> {
 
   clearToken() {
     localStorage.removeItem('dreamSessionToken');
-    this.setState({sessionToken: ""})
+    this.setState({sessionToken: ""});
   }
 
 
-  public render () {
+  render () {
     return (
       <div className="App">
           <div className='main'>
             {this.state.sessionToken != "" ? "component here" : <Auth updateToken={(newToken)=>{this.updateToken(newToken)}}/>}
-
             <button onClick={()=>{this.clearToken()}}>clear</button>
           </div>
       </div>

@@ -1,13 +1,24 @@
 import React from 'react';
 
+type AuthState = {
+    username: string,
+    password: string,
+    profilePic: string,
+    nsfwOk: boolean
+}
+
 type AcceptedProps = {
     updateToken: (newToken: string) => void
 }
 
-export default class Auth extends React.Component <AcceptedProps, {}> {
+export default class Auth extends React.Component <AcceptedProps, AuthState> {
     constructor(props: AcceptedProps){
         super(props)
         this.state = {
+            username: '',
+            password: '',
+            profilePic: '',
+            nsfwOk: false
         }
         
     }
