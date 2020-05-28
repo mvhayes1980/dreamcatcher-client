@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import Home from './components/site/Home';
 import Auth from './components/auth/Auth';
 import 'bootstrap/dist/css/bootstrap.css'
@@ -7,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
 type AppState = {
-  sessionToken: string | null,
+  sessionToken: string,
   isAdmin: boolean,
   nsfwOk: boolean
 }
@@ -25,7 +24,8 @@ class App extends React.Component<{}, AppState> {
 
   componentWillMount() {
     if(localStorage.getItem('dreamSessionToken')) {
-      this.setState({sessionToken: localStorage.getItem('dreamSessionToken')});
+      let token: string | null = localStorage.getItem('dreamSessionToken')
+      this.setState({sessionToken: token != null ? token : ""});
       console.log("sessionToken:", localStorage.getItem('dreamSessionToken'));
 
 
@@ -51,7 +51,7 @@ class App extends React.Component<{}, AppState> {
     return (
       <div className="App">
           <div className='main'>
-            {this.state.sessionToken != "" ? <Home/> : <Auth updateToken={(newToken)=>{this.updateToken(newToken)}}/>}
+            {this.state.sessionToken != "" ? <Home sessionToken={this.state.sessionToken} clearToken={() => this.clearToken()}/> : <Auth updateToken={(newToken)=>{this.updateToken(newToken)}}/>}
             <button onClick={()=>{this.clearToken()}}>clear</button>
           </div>
       </div>
