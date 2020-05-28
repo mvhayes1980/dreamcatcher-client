@@ -1,7 +1,9 @@
 import * as React from 'react';
+
 import Home from './components/site/Home';
 import Auth from './components/auth/Auth';
 import 'bootstrap/dist/css/bootstrap.css'
+
 import './App.css';
 
 type AppState = {
