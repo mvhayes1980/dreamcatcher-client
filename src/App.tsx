@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Navbar from './components/navbar/navbar';
 import Home from './components/site/home';
 import Auth from './components/site/auth/Auth';
 import './App.css';
@@ -47,6 +48,8 @@ class App extends React.Component<{}, AppState> {
   render () {
     return (
       <div className="App">
+          <Navbar/>
+          <Home/>
           <div className='main'>
             {this.state.sessionToken != "" ? "component here" : <Auth updateToken={(newToken)=>{this.updateToken(newToken)}}/>}
             <button onClick={()=>{this.clearToken()}}>clear</button>
