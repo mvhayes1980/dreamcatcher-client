@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Home from './components/site/home';
+import Home from './components/site/Home';
 import Auth from './components/site/auth/Auth';
 import './App.css';
 

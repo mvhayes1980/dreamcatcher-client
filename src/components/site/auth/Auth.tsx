@@ -15,7 +15,7 @@ export default class Auth extends React.Component <AcceptedProps, {}> {
     render(){
         return(
             <div>
-                    <button onClick={() => this.props.updateToken("gregarious chives")}>click to change sessiont toknen</button>
+                    <button onClick={() => this.props.updateToken("gregarious chives")}>click to change session toknen</button>
             </div>
         )
     }
