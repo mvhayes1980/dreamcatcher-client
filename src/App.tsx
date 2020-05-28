@@ -1,6 +1,9 @@
 import * as React from 'react';
-import Home from './components/site/home';
-import Auth from './components/site/auth/Auth';
+
+import Home from './components/site/Home';
+import Auth from './components/auth/Auth';
+import 'bootstrap/dist/css/bootstrap.css'
+
 import './App.css';
 
 type AppState = {
@@ -48,7 +51,7 @@ class App extends React.Component<{}, AppState> {
     return (
       <div className="App">
           <div className='main'>
-            {this.state.sessionToken != "" ? "component here" : <Auth updateToken={(newToken)=>{this.updateToken(newToken)}}/>}
+            {this.state.sessionToken != "" ? <Home/> : <Auth updateToken={(newToken)=>{this.updateToken(newToken)}}/>}
             <button onClick={()=>{this.clearToken()}}>clear</button>
           </div>
       </div>
