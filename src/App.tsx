@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Home from './components/site/Home';
+import Home from './components/site/DreamHome';
 import Auth from './components/auth/Auth';
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -52,7 +52,6 @@ class App extends React.Component<{}, AppState> {
       <div className="App">
           <div className='main'>
             {this.state.sessionToken != "" ? <Home sessionToken={this.state.sessionToken} clearToken={() => this.clearToken()}/> : <Auth updateToken={(newToken)=>{this.updateToken(newToken)}}/>}
-            <button onClick={()=>{this.clearToken()}}>clear</button>
           </div>
       </div>
     );
