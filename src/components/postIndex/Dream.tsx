@@ -1,5 +1,5 @@
 import React from 'react'
-import { DreamType, UserType } from '../../types/CustomTypes'
+import { DreamType, UserType } from '../../types/CustomTypes';
 import { Card, CardHeader, CardTitle, CardBody, Button } from 'reactstrap';
 
 type AcceptedProps = {
