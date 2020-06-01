@@ -86,7 +86,7 @@ li.nav-item{
 /* Jumbotron */
 div#homeJumbotron.jumbotron {
   text-align: center;
-  background-image: url('./assets/dreamcatcherJumbotron.gif');
+  background-image: url('./assets/dreamcatcherJumbotronFinal.gif');
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh !important;
