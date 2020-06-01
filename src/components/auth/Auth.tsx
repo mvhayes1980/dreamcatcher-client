@@ -23,15 +23,17 @@ export default class Auth extends React.Component <AcceptedProps, AuthState> {
 
     render(){
         return(
-            <div>
+            <div id="authDiv">
+                <div id="authAlphaDiv">
                     <Button onClick={()=>{this.setState({isLoggingIn: !this.state.isLoggingIn})}}>Toggle Signup/Login</Button>
-                <Row>
-                    <Col md={{size: 6, offset: 3}}>
-                        {this.state.isLoggingIn ? <Login updateToken={this.props.updateToken}/> : <Signup updateToken={this.props.updateToken}/>}
-                    </Col>
-                    <Col md={{size: 4, offset: 0}}>
-                    </Col>
-                </Row>
+                    <Row id="authloginsignup">
+                        <Col md={{size: 10, offset: 1}}>
+                            {this.state.isLoggingIn ? <Login updateToken={this.props.updateToken}/> : <Signup updateToken={this.props.updateToken}/>}
+                        </Col>
+                        <Col md={{size: 4, offset: 0}}>
+                        </Col>
+                    </Row>
+                </div>
             </div>
         )
     }
