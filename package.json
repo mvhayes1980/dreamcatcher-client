@@ -10,7 +10,6 @@
     "@types/node": "^12.12.42",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
-    "@types/reactstrap": "^8.4.2",
     "bootstrap": "^4.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -43,7 +42,11 @@
   },
   "devDependencies": {
     "@types/bootstrap": "^4.5.0",
+<<<<<<< HEAD
     "@types/react-router": "^5.1.7",
     "@types/react-router-dom": "^5.1.5"
+=======
+    "@types/reactstrap": "^8.4.2"
+>>>>>>> 9220e87ab8a534216377b855bf9c377aa25b6a75
   }
 }

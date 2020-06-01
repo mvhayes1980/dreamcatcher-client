@@ -5,6 +5,13 @@ import TopJumbotron from './homeJumbotron/jumbotron';
 import { Jumbotron, Button } from 'reactstrap';
 import dreams from '../../assests/dreamcatcher.gif';
 import APIURL from '../../helper/Environment';
+<<<<<<< HEAD
+=======
+import UserData from '../userData/UserData';
+import PostIndex from '../postIndex/PostIndex';
+import { DreamType, CommentType, UserType } from '../../types/CustomTypes';
+import PublicIndex from '../publicDreams/PublicIndex';
+>>>>>>> 9220e87ab8a534216377b855bf9c377aa25b6a75
 
 type AcceptedProps = {
     clearToken: () => void
@@ -62,9 +69,16 @@ export default class Home extends React.Component <AcceptedProps, HomeState> {
             <div className='mainDiv'>
                 <BrowserRouter>
                     <Switch>
+<<<<<<< HEAD
                         <DreamBar clearToken={() => this.props.clearToken()}/>
                         <h3>HOME</h3>
 
+=======
+                        <Route exact path="/"><TopJumbotron/></Route>
+                        <Route exact path="/profile"><UserData clearToken={() => {this.props.clearToken()}} fetchUser={()=>this.fetchUser()} sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
+                        <Route exact path="/myposts"><PostIndex user={this.state.user}fetchUser={()=>this.fetchUser()}dreams={this.state.user.dreams} sessionToken={this.props.sessionToken}/></Route>
+                        <Route exact path="/public"><PublicIndex fetchUser={()=>this.fetchUser()}sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
+>>>>>>> 9220e87ab8a534216377b855bf9c377aa25b6a75
                     </Switch>
                 </BrowserRouter>
 

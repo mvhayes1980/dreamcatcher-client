@@ -16,7 +16,8 @@ type AcceptedProps = {
 
 type DreamTableState = {
     sessionToken: string,
-    dreams: DreamType[]
+    dreams: DreamType[],
+    dreamToComment: DreamType
 }
 
 class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
@@ -24,7 +25,16 @@ class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
         super(props);
         this.state = {
             sessionToken: this.props.sessionToken,
-            dreams: this.props.dreams
+            dreams: this.props.dreams,
+            dreamToComment: {
+                category: "",
+                content: "",
+                isNSFW: false,
+                title: "",
+                id: 0,
+                userId: 0,
+                comments: []
+            }
         }
     }
 
@@ -43,10 +53,15 @@ class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
             })
     }
 
+    setDreamToComment(dream: DreamType) {
+        this.setState({dreamToComment: dream});
+        console.log("SET DREAM TO COMMENT:", dream)
+    }
+
     displayDreams() {
-        return this.state.dreams.map((dream,index) => {
+        return this.state.dreams.reverse().map((dream,index) => {
             return (
-                <Dream deleteDream={()=> this.deleteDream(dream)} user={this.props.user} dream={dream}/>
+                <Dream setDreamToComment={(dream: DreamType)=>{this.setDreamToComment(dream)}} deleteDream={()=> this.deleteDream(dream)} user={this.props.user} dream={dream}/>
             )
         })
     }
