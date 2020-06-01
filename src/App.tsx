@@ -52,7 +52,9 @@ class App extends React.Component<{}, AppState> {
       <div className="App">
           <div className='main'>
             {this.state.sessionToken != "" ? <Home sessionToken={this.state.sessionToken} clearToken={() => this.clearToken()}/> : <Auth updateToken={(newToken)=>{this.updateToken(newToken)}}/>}
-            <button onClick={()=>{this.clearToken()}}>clear</button>
+            <div id="clearButton">
+              <button onClick={()=>{this.clearToken()}}>clear</button>
+            </div>
           </div>
       </div>
     );

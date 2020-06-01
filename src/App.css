@@ -1,3 +1,5 @@
+.container
+
 h1.display-3{
   padding: 0;
   margin: 0;
@@ -5,47 +7,10 @@ h1.display-3{
 }
 
 /* Nav */
-ul.nav {
-  background-color: #56494E;
-  float: right;
-  width: 100%;
-  overflow: hidden;
+.navbar.bg-dark {
+  background-color: #56494E !important;
   margin: 0;
-  padding: 5px;
-}
-
-img#logo{
-  padding-bottom: 5px;
-  padding-left: 20px;
-  float: left;
-}
-
-a#brand.navbar-brand{
-  padding-top: 13px !important;
-  padding-left: 10px;
-  padding-right: 15px;
-  margin-right: 20px;
-  color: white;
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  line-height: 2.5;
-  text-decoration: none;
-}
-
-div.navtabs{
-  float: right;
-  line-height: 2.5;
-}
-
-li.nav-item{
-  text-align: right;
-  padding-top: 16px;
-  line-height: 1;
-  font-family: Arial, sans-serif;
-  display: inline-block;
-  color: white;
-  padding-right: 20px;
-  display: flexbox;
+  padding: 0;
 }
 
 /* Jumbotron */
@@ -54,38 +19,10 @@ div#homeJumbotron.jumbotron {
   background-image: url(https://i.imgur.com/s6WiwJs.jpg);
   background-size: cover;
   height: 95vh !important;
+  width: 100% !important;
+  border-radius: 0;
 }
 
-.App {
+#clearButton {
   text-align: center;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-.App-link {
-  color: #61dafb;
-}
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
