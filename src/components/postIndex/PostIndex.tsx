@@ -33,7 +33,6 @@ export default class PostIndex extends React.Component <AcceptedProps,{}> {
                     <Col md="8">
                         <DreamTable user={this.props.user} fetchUser={()=> this.props.fetchUser()} dreams={this.props.dreams} sessionToken={this.props.sessionToken}/>
                     </Col>
-                    
                 </Row>
             </div>
         )

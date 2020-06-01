@@ -1,11 +1,7 @@
 import * as React from 'react';
 import Home from './components/site/DreamHome';
 import Auth from './components/auth/Auth';
-<<<<<<< HEAD
 import 'bootstrap/dist/css/bootstrap.css';
-=======
-import 'bootstrap/dist/css/bootstrap.css'
->>>>>>> 9220e87ab8a534216377b855bf9c377aa25b6a75
 import './App.css';
 
 type AppState = {

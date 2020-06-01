@@ -7,24 +7,17 @@ body {
 }
 
 #authDiv {
-<<<<<<< HEAD
-  background-image: url('./assets/experiment3.gif');
-  background-repeat: no-repeat;
-=======
   background-image: url('./assets/dreamcatcherAuthPage.gif');
   /* opacity: 12%; */
   background-repeat: repeat;
->>>>>>> 9220e87ab8a534216377b855bf9c377aa25b6a75
   background-size: contain;
+  /* max-height: 600px; */
   height: 100vh;
   width: 50vw;
   margin: auto;
   overflow: auto;
   margin-top: 100px;
-<<<<<<< HEAD
-=======
   border: 8px double rgba(218, 214, 195, 0.521);
->>>>>>> 9220e87ab8a534216377b855bf9c377aa25b6a75
   border-radius: 50px;
 }
 
@@ -93,7 +86,7 @@ li.nav-item{
 /* Jumbotron */
 div#homeJumbotron.jumbotron {
   text-align: center;
-  background-image: url('./assets/dreamcatcherJumbotron.gif');
+  background-image: url('./assets/dreamcatcherJumbotronFinal.gif');
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh !important;
