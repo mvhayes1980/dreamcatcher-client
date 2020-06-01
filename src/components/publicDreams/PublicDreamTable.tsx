@@ -1,31 +1,26 @@
-import React from 'react'
-import {DreamType, CommentType, UserType} from '../../types/CustomTypes';
-import { Card, CardBody, CardHeader, CardTitle, Button } from 'reactstrap';
+import React from 'react';
+import { UserType, DreamType } from '../../types/CustomTypes';
+import Dream from '../postIndex/Dream';
 import APIURL from '../../helper/Environment';
-import Dream from './Dream';
+import { Modal } from 'reactstrap';
+import DreamComment from './DreamComment';
 
 type AcceptedProps = {
     sessionToken: string,
-
+    user: UserType,
     dreams: DreamType[],
-
     fetchUser: () => void
-
-    user: UserType
 }
 
-type DreamTableState = {
-    sessionToken: string,
-    dreams: DreamType[],
+type PublicDreamTableState = {
     dreamToComment: DreamType
 }
 
-class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
-    constructor(props: AcceptedProps){
+
+export default class PublicDreamTable extends React.Component<AcceptedProps, PublicDreamTableState> {
+    constructor(props: AcceptedProps) {
         super(props);
         this.state = {
-            sessionToken: this.props.sessionToken,
-            dreams: this.props.dreams,
             dreamToComment: {
                 category: "",
                 content: "",
@@ -59,9 +54,9 @@ class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
     }
 
     displayDreams() {
-        return this.state.dreams.reverse().map((dream,index) => {
+        return this.props.dreams.reverse().map((dream,index) => {
             return (
-                <Dream setDreamToComment={(dream: DreamType)=>{this.setDreamToComment(dream)}} deleteDream={()=> this.deleteDream(dream)} user={this.props.user} dream={dream}/>
+                <Dream setDreamToComment={(dream: DreamType)=> {this.setDreamToComment(dream)}} key={index} deleteDream={()=> this.deleteDream(dream)} user={this.props.user} dream={dream}/>
             )
         })
     }
@@ -69,11 +64,11 @@ class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
     render() {
         return(
             <div>
-                <h3>My Dreams</h3>
                 {this.displayDreams()}
+                {this.state.dreamToComment.category ?
+                    <DreamComment setDreamToComment={(dream: DreamType) => this.setDreamToComment(dream)} sessionToken={this.props.sessionToken} user={this.props.user} dream={this.state.dreamToComment}/>
+                : null}
             </div>
         )
     }
 }
-
-export default DreamTable;

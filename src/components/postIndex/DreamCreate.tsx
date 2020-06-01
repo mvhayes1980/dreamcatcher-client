@@ -21,7 +21,8 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
                 content: '',
                 category: 'joy',
                 isNSFW: false,
-                title: ''
+                title: '',
+                comments: []
             }
         }
     }
@@ -45,7 +46,8 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
                     content: "",
                     category: "joy",
                     isNSFW: false,
-                    title: ''
+                    title: '',
+                    comments: []
                 }})
                 this.props.fetchUser();
             })

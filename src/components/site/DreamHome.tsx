@@ -8,6 +8,7 @@ import APIURL from '../../helper/Environment';
 import UserData from '../userData/UserData';
 import PostIndex from '../postIndex/PostIndex';
 import { DreamType, CommentType, UserType } from '../../types/CustomTypes';
+import PublicIndex from '../publicDreams/PublicIndex';
 
 type AcceptedProps = {
     clearToken: () => void
@@ -85,6 +86,7 @@ export default class Home extends React.Component <AcceptedProps, HomeState> {
                         <Route exact path="/"><TopJumbotron/></Route>
                         <Route exact path="/profile"><UserData clearToken={() => {this.props.clearToken()}} fetchUser={()=>this.fetchUser()} sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
                         <Route exact path="/myposts"><PostIndex user={this.state.user}fetchUser={()=>this.fetchUser()}dreams={this.state.user.dreams} sessionToken={this.props.sessionToken}/></Route>
+                        <Route exact path="/public"><PublicIndex fetchUser={()=>this.fetchUser()}sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
                     </Switch>
                     : null}
                 </BrowserRouter>
