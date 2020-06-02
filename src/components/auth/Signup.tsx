@@ -75,11 +75,12 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                             <Label htmlFor="password">Password</Label>
                             <Input value={this.state.password} onChange={(e) => {this.setState({password:e.target.value})}}type="password" name="password"/>
                         </FormGroup>
-                    </Col>
-                    <Col>
+                    {/* </Col>
+                    <Col> */}
                         <FormGroup>
-                            <Label htmlFor="profilePic" >Profile Picture (image url)</Label>
-                            <Input value={this.state.profilePic} onChange={(e) => {this.setState({profilePic:e.target.value})}} name="profilePic" type="text" />
+                            <Label htmlFor="profilePic" >Profile Picture</Label>
+                            <Input value={this.state.profilePic} placeholder="Image URL" onChange={(e) => {this.setState({profilePic:e.target.value})}} name="profilePic" type="text" />
+
                             <Row>
                                 <Col>
                                     <Label htmlFor="nsfwOk">NSFW content OK?</Label>
@@ -93,8 +94,9 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                         </FormGroup>
                     </Col>
                 </Row>
+                <br/>
                 <FormGroup>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit">SUBMIT</Button>
                     {this.state.error ? <h3 style={{color: "red"}}>{this.state.error}</h3>: null}
                 </FormGroup>
             </Form>

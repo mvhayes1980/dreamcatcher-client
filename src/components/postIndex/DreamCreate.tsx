@@ -21,7 +21,8 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
                 content: '',
                 category: 'joy',
                 isNSFW: false,
-                title: ''
+                title: '',
+                comments: []
             }
         }
     }
@@ -45,7 +46,8 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
                     content: "",
                     category: "joy",
                     isNSFW: false,
-                    title: ''
+                    title: '',
+                    comments: []
                 }})
                 this.props.fetchUser();
             })
@@ -108,7 +110,7 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
                         </Row>
                     </FormGroup>
                     <FormGroup>
-                        <Button disabled={(!this.state.dream.content && !this.state.dream.title)} type="submit">Post</Button>
+                        <Button disabled={(!this.state.dream.content && !this.state.dream.title)} type="submit">POST</Button>
                     </FormGroup>
                 </Form>
             </div>

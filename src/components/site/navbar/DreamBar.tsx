@@ -25,8 +25,6 @@ export default class DreamBar extends React.Component <AcceptedProps>{
                             
                             <Button id="logoutbutt" onClick={() => this.props.clearToken()}>Logout</Button>
                         </ul>
-                            
-                        
                 </Navbar>
             </div>
         )
