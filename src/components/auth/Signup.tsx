@@ -66,7 +66,7 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
     render() {
         return(
             <Form onSubmit={(e: FormEvent) => this.handleSubmit(e)}>
-                <h3>SIGNUP</h3>
+                <h3 id='signup'>SIGNUP</h3>
                 <Row>
                     <Col>
                         <FormGroup>
@@ -88,7 +88,7 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                             </Row>
                             <Row>
                                 <Col>
-                                    <Input type="checkbox" onChange={(e) => {this.setState({nsfwOk: !this.state.nsfwOk})}} name="nsfwOk"/>
+                                    <Input type="checkbox" id="NSFWbox" onChange={(e) => {this.setState({nsfwOk: !this.state.nsfwOk})}} name="nsfwOk"/>
                                 </Col>
                             </Row>
                         </FormGroup>

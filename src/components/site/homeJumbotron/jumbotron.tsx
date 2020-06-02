@@ -7,16 +7,15 @@ export default class Home extends React.Component{
         return(
             <div className='mainDiv'>
                 <div className="body">
-                    <div className="container">
                         <Jumbotron id="homeJumbotron">
                             {/* <h1 className="display-3">Welcome to Dream Catcher!</h1>
                             <hr className="my-2" />
+                            <p></p>
                             <p>Share your dreams and encounter others' realities.</p> */}
                             <p className="lead">
                             {/* <Button color="primary">Learn More</Button> */}
                             </p>
                         </Jumbotron>
-                    </div>
                 </div>
             </div>
         )

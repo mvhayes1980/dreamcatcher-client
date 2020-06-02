@@ -124,10 +124,10 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
         return(
             <div>
                 {this.state.done ? <Redirect to="/"/> : null}
-                <h1>My Dreamcatcher Profile</h1>
-                <Row>
-                    <Col md={{size: 6, offset: 3}}>
-                        <Form onSubmit={(e: FormEvent) => this.handleSubmit(e)}>
+                <h1 id="profileHead">My Dreamcatcher Profile</h1>
+                <Row id="profileRow">
+                    <Col md={{size: 10, offset: 1}}>
+                        <Form id="profileForm" onSubmit={(e: FormEvent) => this.handleSubmit(e)}>
                             <Row>
                                 <Col>
                                     <FormGroup>
@@ -141,6 +141,8 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
                                         <img className="profilePic" height={100} width={100} src={this.state.user.profilePic} alt=""/>
                                     </FormGroup>
                                 </Col>
+                            </Row>
+                            <Row>
                                 <Col>
                                     <FormGroup>
                                         <Label htmlFor="profilePic" >Profile Picture (image url)</Label>
@@ -169,6 +171,7 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
                             <FormGroup>
                                 <Button type="submit" disabled={this.compareUsers()}>SAVE CHANGES</Button>
                                 <Button color="danger" onClick={() => {this.deleteUser()}}>DELETE</Button>
+
                                 {this.state.error ? <h3 style={{color: "red"}}>{this.state.error}</h3>: null}
                             </FormGroup>
                         </Form>

@@ -1,36 +1,50 @@
+
 body {
-  background-color: rgb(255, 252, 242);
+  /* background-color: rgb(255, 252, 242); */
+  background-color: rgba(179, 139, 109, 0.24);
 }
 
-.profilePic {
-  border-radius: 500px;
-}
 
+/* Auth Login/SignUp */
 #authDiv {
-  background-image: url('./assets/dreamcatcherAuthPage.gif');
-  /* opacity: 12%; */
-  background-repeat: repeat;
-  background-size: contain;
-  /* max-height: 600px; */
-  height: 100vh;
+  /* background-image: url('./assets/dreamcatcherAuthPage.gif'); */
+  /* background-color: #56494E; */
+  background-repeat: no-repeat;
+  background-size: 600px;
+  height: 50vh;
   width: 50vw;
   margin: auto;
-  overflow: auto;
-  margin-top: 100px;
-  border: 8px double rgba(218, 214, 195, 0.521);
-  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 15%;
 }
 
 #authAlphaDiv {
   margin: auto;
-  margin-top: 75px;
+  margin-top: 6px;
+  margin-bottom: 65px;
   border-radius: 50px;
   width: 80%;
   padding: 10px;
   height: auto;
   opacity: 100%;
-  background-color: rgba(255, 253, 248, 0.993);
-  border: double 8px rgba(218, 214, 195, 0.521);
+  /* background-color: #56494E; */
+  background-color: rgba(179, 139, 109, 0.24);
+  /* color: white; */
+  /* background-color: transparent; */
+  /* border: double 8px rgba(218, 214, 195, 0.521); */
+  border: double 8px grey;
+
+}
+
+#signup {
+  text-align: center;
+}
+#login {
+  text-align: center;
+}
+
+.form-check-input {
+  margin: auto;
 }
 
 h1.display-3{
@@ -40,88 +54,91 @@ h1.display-3{
 }
 
 /* Nav */
-ul.nav {
-  background-color: #56494E;
-  float: right;
-  width: 100%;
-  overflow: hidden;
+.navbar {
+  background-color: #56494E !important;
   margin: 0;
-  padding: 5px;
-  border: double 5px;
+  padding: 0;
+  position: sticky;
+  overflow: hidden;
 }
 
-img#logo{
-  padding-bottom: 5px;
-  padding-left: 20px;
+ul{
+  display: inline-flex;
   float: left;
+  padding-top: 10px;
 }
 
-a#brand.navbar-brand{
-  padding-top: 13px !important;
-  padding-left: 10px;
-  padding-right: 15px;
-  margin-right: 20px;
+ul#homeNav {
+  padding: 10px 0 0 0px;
+  margin-bottom: 0 !important;
+}
+
+#hometab{
+  margin-top: 40px;
+  margin-left: 5px;
+  margin-right: 30px;
   color: white;
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  line-height: 2.5;
-  text-decoration: none;
+  line-height: 3;
 }
 
-div.navtabs{
-  float: right;
-  line-height: 2.5;
+a.nav-link{
+  padding: 0 0 12px 0!important;
+  margin-left: 15px;
 }
 
-li.nav-item{
-  text-align: right;
-  padding-top: 16px;
-  line-height: 1;
-  font-family: Arial, sans-serif;
-  display: inline-block;
+#tabs {
+  margin-top: 40px;
+  margin-left: 15px;
+  margin-right: 30px;
   color: white;
-  padding-right: 20px;
+  line-height: 3;
 }
 
-/* Jumbotron */
+#logoutbutt {
+  margin-right: 40px;
+  margin-left: 15px;
+  background-color: transparent;
+  border-width: 0;
+}
+
+
+/* Home Jumbotron */
 div#homeJumbotron.jumbotron {
   text-align: center;
   background-image: url('./assets/dreamcatcherJumbotronFinal.gif');
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh !important;
+  width: 100% !important;
+  border-radius: 0;
 }
 
-.App {
+#clearButton {
   text-align: center;
 }
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* User Profile */
+
+#profileHead {
+  text-align: center;
+  margin-bottom: 50px;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+#profileForm {
+  margin: 0 100px 0px 100px;
 }
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.profilePic {
+  margin-top: 20px ;
+  position: absolute;
+
 }
-.App-link {
-  color: #61dafb;
+
+#saveDelete.form-group {
+  text-align: center;
+  margin-top: 20px;
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+#profileRow.row {
+  width: 100%;
 }
