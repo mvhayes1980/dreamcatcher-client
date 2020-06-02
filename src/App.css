@@ -7,7 +7,6 @@ body {
 
 /* Auth Login/SignUp */
 #authDiv {
-  /* background-image: url('./assets/dreamcatcherAuthPage.gif'); */
   /* background-color: #56494E; */
   background-repeat: no-repeat;
   background-size: 600px;
@@ -113,7 +112,7 @@ a.nav-link{
 /* Home Jumbotron */
 div#homeJumbotron.jumbotron {
   text-align: center;
-  background-image: url('./assets/dreamcatcherJumbotronFinal.gif');
+  background-image: url('./assets/dreamcatcherjumbotronfinal.gif');
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh !important;
