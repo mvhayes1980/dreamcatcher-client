@@ -61,7 +61,7 @@ class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
     displayDreams() {
         return this.state.dreams.reverse().map((dream,index) => {
             return (
-                <Dream setDreamToComment={(dream: DreamType)=>{this.setDreamToComment(dream)}} deleteDream={()=> this.deleteDream(dream)} user={this.props.user} dream={dream}/>
+                <Dream key={index} setDreamToComment={(dream: DreamType)=>{this.setDreamToComment(dream)}} deleteDream={()=> this.deleteDream(dream)} user={this.props.user} dream={dream}/>
             )
         })
     }
