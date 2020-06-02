@@ -109,7 +109,7 @@ class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
     render() {
         return(
             <div>
-                <h3>My Dreams</h3>
+                <h3 id="nd">My Dreams</h3>
                 {this.displayDreams()}
                 { this.state.dreamToEdit.content ?
                     <DreamEdit dream={this.state.dreamToEdit} setDreamToEdit={(dream: DreamType)=>{this.setDreamToEdit(dream)}} fetchUser={() => this.props.fetchUser()} sessionToken={this.props.sessionToken} />

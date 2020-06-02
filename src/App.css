@@ -11,11 +11,11 @@ body {
   /* background-color: #56494E; */
   background-repeat: no-repeat;
   background-size: 600px;
-  height: 50vh;
+  height: 10vh;
   width: 50vw;
   margin: auto;
-  overflow: hidden;
-  margin-top: 15%;
+  /* overflow: hidden; */
+  margin-top: 6%;
 }
 
 #authAlphaDiv {
@@ -36,6 +36,13 @@ body {
 
 }
 
+#togglebutt.btn.btn-secondary{ 
+  display: block;
+  position: relative;
+  margin: auto;
+  width: fit-content;
+}
+
 #signup {
   text-align: center;
 }
@@ -52,6 +59,7 @@ h1.display-3{
   margin: 0;
   top: 0;
 }
+
 
 /* Nav */
 .navbar {
@@ -121,17 +129,19 @@ div#homeJumbotron.jumbotron {
 
 #profileHead {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 #profileForm {
   margin: 0 100px 0px 100px;
 }
 
-.profilePic {
-  margin-top: 20px ;
-  position: absolute;
-
+#profile.profilePic {
+  display: block;
+  position: relative;
+  margin: auto;
+  width: 200px;
+  height: 200px;
 }
 
 #saveDelete.form-group {
@@ -141,4 +151,34 @@ div#homeJumbotron.jumbotron {
 
 #profileRow.row {
   width: 100%;
+}
+
+#profNSFW.form-check-input {
+  margin-top: 6px;
+  margin-left: 50px;
+}
+
+/* My Posts */
+
+#nd {
+  font-variant: small-caps;
+  font-size: 35px;
+}
+
+
+#commentPic {
+  width: 50px;
+  float: left;
+  display: block;
+}
+
+#commentName {
+  float: left;
+  display: block;
+  line-height: 3;
+  font-size: large;
+}
+
+.post {
+  margin: 20px 50px 0 50px;
 }

@@ -12,7 +12,10 @@ export default class CommentTable extends React.Component<AcceptedProps> {
         return this.props.comments.map((comment, index) => {
             return (
                 <Card>
-                    <p>{this.props.user.username}: </p>
+                    <div>
+                        <img id="commentPic" src={this.props.user.profilePic} height="50" alt=""/>
+                        <p id="commentName">{this.props.user.username}: </p>
+                    </div>
                     <p>on "{comment.dream?.title}"</p>
                     <h4>{comment.content}</h4>
                 </Card>
