@@ -5,7 +5,8 @@ import { Card, CardHeader, CardTitle, CardBody, Button, Modal } from 'reactstrap
 type AcceptedProps = {
     dream: DreamType,
     user: UserType,
-    deleteDream: () => void
+    deleteDream: () => void,
+    setDreamToEdit: (dream: DreamType) => void,
     setDreamToComment: (dream: DreamType) => void
 }
 
@@ -52,7 +53,7 @@ export default class Dream extends React.Component <AcceptedProps, DreamState> {
                     <p>{this.state.hideNSFW ? "(This content contains NSFW material)..." : this.props.dream.content}</p>
                     {this.state.hideNSFW ? <Button onClick={()=>this.setState({hideNSFW:false})}>view</Button> : null}
 
-                    <Button color="warning">UPDATE</Button>
+                    <Button color="warning" onClick={()=>{this.props.setDreamToEdit(this.props.dream)}}>UPDATE</Button>
 
                     {this.props.user.id === this.props.dream.userId || this.props.user.isAdmin ? 
                     <Button color="danger" onClick={()=>{this.props.deleteDream()}}>DELETE</Button>
