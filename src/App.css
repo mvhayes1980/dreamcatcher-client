@@ -7,7 +7,6 @@ body {
 }
 
 #authDiv {
-  background-image: url('./assets/dreamcatcherAuthPage.gif');
   /* opacity: 12%; */
   background-repeat: repeat;
   background-size: contain;
@@ -86,7 +85,7 @@ li.nav-item{
 /* Jumbotron */
 div#homeJumbotron.jumbotron {
   text-align: center;
-  background-image: url('./assets/dreamcatcherJumbotronFinal.gif');
+  background-image: url('./assets/dreamcatcherJumbotron.gif');
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh !important;
