@@ -71,7 +71,7 @@ export default class Login extends React.Component <AcceptedProps, LoginState> {
                     <Input value={this.state.password} onChange={(e) => {this.setState({password:e.target.value})}}type="password" name="password"/>
                 </FormGroup>
                 <FormGroup>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit">SUBMIT</Button>
                     {this.state.error ? <h3 style={{color: "red"}}>{this.state.error}</h3>: null}
                 </FormGroup>
             </Form>

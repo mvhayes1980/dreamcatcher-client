@@ -72,7 +72,7 @@ export default class DreamComment extends React.Component<AcceptedProps, DreamCo
                         }}/>
                     </FormGroup>
                     <FormGroup>
-                        <Button type="submit">Submit Comment</Button>
+                        <Button type="submit">SUBMIT COMMENT</Button>
                     </FormGroup>
                 </Form>
             </Modal>
