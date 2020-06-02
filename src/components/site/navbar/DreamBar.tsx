@@ -12,8 +12,7 @@ export default class DreamBar extends React.Component <AcceptedProps>{
         return(
             <div className='mainDiv'>
                 <Navbar color="dark">
-                <NavLink to="/">
-                        <img src={dreamcatcher} id="logo" height="100px" alt=""/></NavLink>
+                    <Link to="/"><img src={dreamcatcher} id="logo" height="100px" alt=""/></Link>
                     <ul>
                         <li style={{color: "white"}}>
                             <Link to="/">Home</Link>
@@ -24,8 +23,11 @@ export default class DreamBar extends React.Component <AcceptedProps>{
                         <li style={{color: "white"}}>
                             <Link to="/myposts">My Posts</Link>
                         </li>
+                        <li style={{color: "white"}}>
+                            <Link to="/public">Public Dreams</Link>
+                        </li>
                     </ul>
-                        <Button onClick={() => this.props.clearToken()}>Logout</Button>
+                        <Button onClick={() => this.props.clearToken()}>LOGOUT</Button>
                 </Navbar>
             </div>
         )
