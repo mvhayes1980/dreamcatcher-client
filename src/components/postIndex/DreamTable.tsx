@@ -3,6 +3,8 @@ import {DreamType, CommentType, UserType} from '../../types/CustomTypes';
 import { Card, CardBody, CardHeader, CardTitle, Button } from 'reactstrap';
 import APIURL from '../../helper/Environment';
 import Dream from './Dream';
+import DreamEdit from './DreamEdit';
+import DreamComment from '../publicDreams/DreamComment';
 
 type AcceptedProps = {
     sessionToken: string,
@@ -93,12 +95,13 @@ class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
 
     setDreamToEdit(dream: DreamType) {
         this.setState({dreamToEdit: dream});
+        console.log("SET DREAM TO EDIT")
     }
 
     displayDreams() {
         return this.state.dreams.reverse().map((dream,index) => {
             return (
-                <Dream setDreamToComment={(dream: DreamType)=>{this.setDreamToComment(dream)}} deleteDream={()=> this.deleteDream(dream)} setDreamToEdit={(dream: DreamType)=>{this.setDreamToEdit(dream)}} user={this.props.user} dream={dream}/>
+                <Dream sessionToken={this.props.sessionToken} key={index} setDreamToComment={(dream: DreamType)=>{this.setDreamToComment(dream)}} deleteDream={(dream: DreamType)=> this.deleteDream(dream)} fetchUser={()=> {this.props.fetchUser()}} setDreamToEdit={(dream: DreamType)=>{this.setDreamToEdit(dream)}} user={this.props.user} dream={dream}/>
             )
         })
     }
@@ -108,6 +111,14 @@ class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
             <div>
                 <h3>My Dreams</h3>
                 {this.displayDreams()}
+                { this.state.dreamToEdit.content ?
+                    <DreamEdit dream={this.state.dreamToEdit} setDreamToEdit={(dream: DreamType)=>{this.setDreamToEdit(dream)}} fetchUser={() => this.props.fetchUser()} sessionToken={this.props.sessionToken} />
+                : null}
+
+                {this.state.dreamToComment.category ?
+                    <DreamComment setDreamToComment={(dream: DreamType) => this.setDreamToComment(dream)} sessionToken={this.props.sessionToken} user={this.props.user} dream={this.state.dreamToComment}/>
+                : null}
+
             </div>
         )
     }
