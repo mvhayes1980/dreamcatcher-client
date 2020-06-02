@@ -2,7 +2,12 @@ export type CommentType = {
         content: string,
         dreamId?: number,
         userId?: number,
-        id?: number
+        id?: number,
+        user?: {
+                username: string,
+                profilePic: string
+        },
+        dream?: DreamType
 }
 export type DreamType = {
         content: string,
@@ -10,7 +15,8 @@ export type DreamType = {
         userId?: number,
         isNSFW: boolean,
         title: string,
-        id?: number
+        id?: number,
+        user?: UserType,
         comments: CommentType[]
 }
 export type UserType = {

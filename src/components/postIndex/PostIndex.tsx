@@ -4,6 +4,7 @@ import { Row, Col } from 'reactstrap';
 import DreamTable from './DreamTable';
 import { DreamType, UserType } from '../../types/CustomTypes';
 import DreamEdit from './DreamEdit';
+import CommentTable from './CommentTable';
 
 
 type AcceptedProps = {
@@ -49,6 +50,9 @@ export default class PostIndex extends React.Component<AcceptedProps, PostIndexS
                         </Col>
                         <Col md="8">
                             <DreamTable user={this.props.user} fetchUser={() => this.props.fetchUser()} dreams={this.props.dreams} sessionToken={this.props.sessionToken} />
+                        </Col>
+                        <Col>
+                            <CommentTable user={this.props.user} comments={this.props.user.comments}/>
                         </Col>
                     </Row>
                 </div>
