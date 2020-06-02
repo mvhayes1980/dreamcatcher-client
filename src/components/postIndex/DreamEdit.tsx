@@ -4,26 +4,21 @@ import APIURL from '../../helper/Environment';
 import { DreamType } from '../../types/CustomTypes';
 
 type AcceptedProps = {
-    sessionToken: string
+    sessionToken: string,
+    setDreamToEdit: (dream: DreamType) => void,
 
     fetchUser: () => void
 }
 
 type DreamEditState = {
-    dreamToEdit: DreamType
+    dreamToEdit: DreamType,
 }
 
 export default class DreamEdit extends React.Component <AcceptedProps, DreamEditState> {
     constructor(props: AcceptedProps) {
         super(props);
         this.state = {
-            dreamToEdit: {
-                content: '',
-                category: 'joy',
-                isNSFW: false,
-                title: '',
-                comments: []
-            }
+            
         }
     }
 
@@ -56,6 +51,13 @@ export default class DreamEdit extends React.Component <AcceptedProps, DreamEdit
         return(
             <div>
                 <Modal isOpen={true}>
+                    <Button onClick={()=>{this.props.setDreamToEdit({
+                        content: "",
+                        category: "joy",
+                        isNSFW: false,
+                        title: '',
+                        comments: []
+                    })}}>X</Button>
                 <ModalBody>
                 <Form>
                     <h3>Update Dream</h3>

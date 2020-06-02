@@ -50,9 +50,6 @@ export default class PostIndex extends React.Component<AcceptedProps, PostIndexS
                         <Col md="8">
                             <DreamTable user={this.props.user} fetchUser={() => this.props.fetchUser()} dreams={this.props.dreams} sessionToken={this.props.sessionToken} />
                         </Col>
-                        { this.state.dreamToEdit.content ?
-                        <DreamEdit fetchUser={() => this.props.fetchUser()} sessionToken={this.props.sessionToken} /> 
-                        : null}
                     </Row>
                 </div>
             )

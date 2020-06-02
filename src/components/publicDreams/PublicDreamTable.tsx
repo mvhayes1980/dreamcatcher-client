@@ -88,7 +88,6 @@ export default class PublicDreamTable extends React.Component<AcceptedProps, Pub
 
     setDreamToEdit(dream: DreamType) {
         this.setState({dreamToEdit: dream});
-        console.log("AHHHHHHHH")
     }
 
     displayDreams() {
