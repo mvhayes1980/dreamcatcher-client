@@ -27,7 +27,7 @@ export default class DreamBar extends React.Component <AcceptedProps>{
                             <Link to="/public">Public Dreams</Link>
                         </li>
                     </ul>
-                        <Button onClick={() => this.props.clearToken()}>Logout</Button>
+                        <Button onClick={() => this.props.clearToken()}>LOGOUT</Button>
                 </Navbar>
             </div>
         )

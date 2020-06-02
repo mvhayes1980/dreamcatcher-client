@@ -17,7 +17,8 @@ type AcceptedProps = {
 type DreamTableState = {
     sessionToken: string,
     dreams: DreamType[],
-    dreamToComment: DreamType
+    dreamToComment: DreamType,
+    dreamToEdit: DreamType
 }
 
 class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
@@ -34,6 +35,13 @@ class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
                 id: 0,
                 userId: 0,
                 comments: []
+            },
+            dreamToEdit: {
+                content: "",
+                    category: "joy",
+                    isNSFW: false,
+                    title: '',
+                    comments: []
             }
         }
     }
@@ -53,15 +61,44 @@ class DreamTable extends React.Component<AcceptedProps, DreamTableState> {
             })
     }
 
+    updateDream (dream: DreamType) {
+        fetch(`${APIURL}/api/dreams/update/${dream.id}`, {
+            method: "put",
+            headers: {
+                'content-type': 'application/json',
+                'authorization': this.props.sessionToken
+            },
+            body: JSON.stringify({
+                dream: this.state.dreamToEdit
+            })
+        })
+            .then(res=>res.json())
+            .then(res=> {
+                console.log(res);
+                this.setState({dreamToEdit: {
+                    content: "",
+                    category: "joy",
+                    isNSFW: false,
+                    title: '',
+                    comments: []
+                }})
+                this.props.fetchUser();
+            })
+    }
+
     setDreamToComment(dream: DreamType) {
         this.setState({dreamToComment: dream});
         console.log("SET DREAM TO COMMENT:", dream)
     }
 
+    setDreamToEdit(dream: DreamType) {
+        this.setState({dreamToEdit: dream});
+    }
+
     displayDreams() {
         return this.state.dreams.reverse().map((dream,index) => {
             return (
-                <Dream setDreamToComment={(dream: DreamType)=>{this.setDreamToComment(dream)}} deleteDream={()=> this.deleteDream(dream)} user={this.props.user} dream={dream}/>
+                <Dream setDreamToComment={(dream: DreamType)=>{this.setDreamToComment(dream)}} deleteDream={()=> this.deleteDream(dream)} setDreamToEdit={(dream: DreamType)=>{this.setDreamToEdit(dream)}} user={this.props.user} dream={dream}/>
             )
         })
     }

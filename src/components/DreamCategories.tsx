@@ -16,7 +16,6 @@ export default class DreamCategories extends React.Component<{},{}> {
                 <option value={"Fortune"}>Fortune</option>
                 <option value={"Rage"}>Rage</option>
                 <option value={"Memory"}>Memory</option>
-
             </div>
         )
     }
