@@ -126,11 +126,13 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
                 {this.state.done ? <Redirect to="/"/> : null}
                 <h1 id="profileHead">My Dreamcatcher Profile</h1>
                 <Row id="profileRow">
-                    <Col md={{size: 10, offset: 1}}>
+                    <Col md={{size: 6, offset:3}}>
                         <Form id="profileForm" onSubmit={(e: FormEvent) => this.handleSubmit(e)}>
                             <Row>
                                 <Col>
                                     <FormGroup>
+                                        <img className="profilePic" id="profile" height={100} width={100} src={this.state.user.profilePic} alt=""/>
+                                        <br/>
                                         <Label htmlFor="username">Dreamer's Name</Label>
                                         <Input value={this.state.user.username} onChange={(e) => {
                                             let newUser = this.state.user;
@@ -138,7 +140,7 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
                                             this.setState({user: newUser})
                                         }} name="username"/>
 
-                                        <img className="profilePic" height={100} width={100} src={this.state.user.profilePic} alt=""/>
+                                        
                                     </FormGroup>
                                 </Col>
                             </Row>
@@ -151,14 +153,11 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
                                             newUser.profilePic = e.target.value;
                                             this.setState({user: newUser})
                                         }} name="profilePic" type="text" />
+                                        <hr/>
                                         <Row>
-                                            <Col>
+                                            <Col id="nsfw">
                                                 <Label htmlFor="nsfwOk">NSFW content OK?</Label>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col>
-                                                <Input type="checkbox" checked={this.state.user.nsfwOk} onChange={(e) => {
+                                                <Input id="profNSFW" type="checkbox" checked={this.state.user.nsfwOk} onChange={(e) => {
                                             let newUser = this.state.user;
                                             newUser.nsfwOk = !this.state.user.nsfwOk;
                                             this.setState({user: newUser})

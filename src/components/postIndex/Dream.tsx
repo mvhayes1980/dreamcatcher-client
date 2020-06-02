@@ -71,9 +71,9 @@ export default class Dream extends React.Component <AcceptedProps, DreamState> {
             <div>
                 <Card style={{marginBottom: "15px"}}>
                     <CardHeader>
-                    <CardTitle>{this.props.dream.title}</CardTitle>
+                    <CardTitle id="md">{this.props.dream.title}</CardTitle>
                     <p>by {this.state.dream.user?.username}</p>
-                    <p>{this.props.dream.category}</p>
+                    <p id="dreamCat">{this.props.dream.category}</p>
                     </CardHeader>
                     <CardBody>
                     <p>{this.state.hideNSFW ? "(This content contains NSFW material)..." : this.props.dream.content}</p>
