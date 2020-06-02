@@ -20,6 +20,7 @@ export default class DreamBar extends React.Component <AcceptedProps>{
                             <a><Link id="hometab" to="/">Home</Link></a>
                         </ul>
                         <ul>
+                            <a><Link id="tabs" to="/public">Public</Link></a>
                             <a><Link id="tabs" to="/myposts">My Posts</Link></a>
                             <a><Link id="tabs" to="/profile">Profile</Link></a>
                             

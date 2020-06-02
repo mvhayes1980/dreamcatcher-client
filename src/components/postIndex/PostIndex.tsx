@@ -34,16 +34,18 @@ export default class PostIndex extends React.Component<AcceptedProps, PostIndexS
         }
         render() {
             return (
-                <div>
-                    <Row>
+                <div className="post">
+                    {/* <Row>
                         <Col md="4">
-                            <img className="profilePic" src={this.props.user.profilePic} height="200" alt=""/>
+                            
                         </Col>
                         <Col md="8">
                             <h1>{this.props.user.username}</h1>
+                            <img className="profilePic" src={this.props.user.profilePic} height="100" alt=""/>
                         </Col>
                     </Row>
                     <hr />
+                     */}
                     <Row>
                         <Col md="4">
                             <DreamCreate fetchUser={() => this.props.fetchUser()} sessionToken={this.props.sessionToken} />
@@ -51,10 +53,17 @@ export default class PostIndex extends React.Component<AcceptedProps, PostIndexS
                         <Col md="8">
                             <DreamTable user={this.props.user} fetchUser={() => this.props.fetchUser()} dreams={this.props.dreams} sessionToken={this.props.sessionToken} />
                         </Col>
-                        <Col>
+                        </Row>
+
+                        <Row>
+                        <Col md="4">
+                        </Col>
+                        <Col md="8">
+                            <hr/>
+                            <h1 id="nd">My Comments</h1>
                             <CommentTable user={this.props.user} comments={this.props.user.comments}/>
                         </Col>
-                    </Row>
+                        </Row>
                 </div>
             )
         }
