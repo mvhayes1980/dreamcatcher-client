@@ -1,34 +1,31 @@
 import React, { FormEvent } from 'react'
-import { DreamType, CommentType, UserType } from '../../types/CustomTypes'
-import { Modal, Form, FormGroup, Input, Button } from 'reactstrap';
+import { CommentType } from '../../types/CustomTypes'
+import { Modal, Button, Form, FormGroup, Input } from 'reactstrap';
 import APIURL from '../../helper/Environment';
 
 type AcceptedProps = {
-    dream: DreamType,
-    user: UserType,
-    sessionToken: string
-    setDreamToComment: (dream: DreamType) => void
+    sessionToken: string,
+    comment: CommentType,
+    setCommentToEdit: (comment: CommentType) => void,
+    fetchUser: () => void
 }
 
-type DreamCommentState = {
+type CommentState = {
     comment: CommentType
 }
 
-export default class DreamComment extends React.Component<AcceptedProps, DreamCommentState> {
+export default class CommentEdit extends React.Component<AcceptedProps, CommentState> {
     constructor(props: AcceptedProps) {
         super(props);
         this.state = {
-            comment: {
-                content: "",
-                dreamId: this.props.dream.id,
-                userId: this.props.user.id
-            }
+            comment: this.props.comment
         }
     }
 
-    handleSubmit(e:FormEvent) {
-        fetch(`${APIURL}/api/comments/create`, {
-            method: "post",
+    handleSubmit(e: FormEvent) {
+        e.preventDefault();
+        fetch(`${APIURL}/api/comments/update/${this.state.comment.id}`, {
+            method: "put",
             headers: {
                 'content-type': 'application/json',
                 'authorization': this.props.sessionToken
@@ -36,18 +33,15 @@ export default class DreamComment extends React.Component<AcceptedProps, DreamCo
             body: JSON.stringify({
                 comment: this.state.comment
             })
-                
         })
             .then(res=>res.json())
             .then(res => {
-                console.log(res);
-                this.props.setDreamToComment({
-                    category: "",
+                console.log("COMMENT UPDATED:", res);
+                this.props.setCommentToEdit({
                     content: "",
-                    isNSFW: false,
-                    title: "",
-                    comments: []
+                    id: 0
                 })
+                this.props.fetchUser();
             })
     }
 
@@ -55,12 +49,9 @@ export default class DreamComment extends React.Component<AcceptedProps, DreamCo
         return(
             <Modal isOpen={true}>
                 <Button onClick={()=> {
-                    this.props.setDreamToComment({
-                        category: "",
+                    this.props.setCommentToEdit({
                         content: "",
-                        isNSFW: false,
-                        title: "",
-                        comments: []
+                        id: 0
                     })
                 }}>X</Button>
                 <hr/>
