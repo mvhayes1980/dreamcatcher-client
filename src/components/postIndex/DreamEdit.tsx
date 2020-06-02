@@ -4,44 +4,41 @@ import APIURL from '../../helper/Environment';
 import { DreamType } from '../../types/CustomTypes';
 
 type AcceptedProps = {
-    sessionToken: string
+    sessionToken: string,
+    setDreamToEdit: (dream: DreamType) => void,
+    dream: DreamType
 
     fetchUser: () => void
 }
 
 type DreamEditState = {
-    dreamToEdit: DreamType
+    dream: DreamType
 }
 
 export default class DreamEdit extends React.Component <AcceptedProps, DreamEditState> {
     constructor(props: AcceptedProps) {
         super(props);
         this.state = {
-            dreamToEdit: {
-                content: '',
-                category: 'joy',
-                isNSFW: false,
-                title: '',
-                comments: []
-            }
+            dream: this.props.dream
         }
     }
 
-    updateDream (dream: DreamType) {
-        fetch(`${APIURL}/api/dreams/update/${dream.id}`, {
+    updateDream (e: FormEvent) {
+        e.preventDefault();
+        fetch(`${APIURL}/api/dreams/update/${this.state.dream.id}`, {
             method: "put",
             headers: {
                 'content-type': 'application/json',
                 'authorization': this.props.sessionToken
             },
             body: JSON.stringify({
-                dream: this.state.dreamToEdit
+                dream: this.state.dream
             })
         })
             .then(res=>res.json())
             .then(res=> {
                 console.log(res);
-                this.setState({dreamToEdit: {
+                this.setState({dream: {
                     content: "",
                     category: "joy",
                     isNSFW: false,
@@ -56,23 +53,30 @@ export default class DreamEdit extends React.Component <AcceptedProps, DreamEdit
         return(
             <div>
                 <Modal isOpen={true}>
+                    <Button onClick={()=>{this.props.setDreamToEdit({
+                        category: "",
+                        comments: [],
+                        content: "",
+                        isNSFW: false,
+                        title: ""
+                    })}}>X</Button>
                 <ModalBody>
-                <Form>
+                <Form onSubmit={(e: FormEvent)=> {this.updateDream(e)}}>
                     <h3>Update Dream</h3>
                     <FormGroup>
                         <Label htmlFor="title">Title:</Label>
-                        <Input name="title" value={this.state.dreamToEdit.title} onChange={e => {
-                            let dream = this.state.dreamToEdit;
+                        <Input name="title" value={this.state.dream.title} onChange={e => {
+                            let dream = this.state.dream;
                             dream.title = e.target.value;
-                            this.setState({dreamToEdit: dream});
+                            this.setState({dream: dream});
                         }}/>
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="category">Category:</Label>
-                        <Input name="category" value={this.state.dreamToEdit.category} type="select" onChange={e => {
-                            let dream = this.state.dreamToEdit;
+                        <Input name="category" value={this.state.dream.category} type="select" onChange={e => {
+                            let dream = this.state.dream;
                             dream.category = e.target.value;
-                            this.setState({dreamToEdit: dream});
+                            this.setState({dream: dream});
                         }}>
                             <option value={"joy"}>Joy</option>
                             <option value={"despair"}>Despair</option>
@@ -89,11 +93,11 @@ export default class DreamEdit extends React.Component <AcceptedProps, DreamEdit
                         </Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="content">Content: {this.state.dreamToEdit.content.length}/250</Label>
-                        <Input name="content" value={this.state.dreamToEdit.content} onChange={(e) => {
-                            let dream = this.state.dreamToEdit;
+                        <Label htmlFor="content">Content: {this.state.dream.content.length}/250</Label>
+                        <Input name="content" value={this.state.dream.content} onChange={(e) => {
+                            let dream = this.state.dream;
                             dream.content = e.target.value;
-                            this.setState({dreamToEdit: dream});
+                            this.setState({dream: dream});
                         }} type="textarea" draggable="false" maxLength={250}></Input>
                     </FormGroup>
                     <FormGroup>
@@ -102,16 +106,16 @@ export default class DreamEdit extends React.Component <AcceptedProps, DreamEdit
                                 <Label htmlFor="isNSFW">NSFW?</Label>
                             </Col>
                             <Col>
-                                <Input type="checkbox" checked={this.state.dreamToEdit.isNSFW} onChange={()=>{
-                                    let dream = this.state.dreamToEdit;
+                                <Input type="checkbox" checked={this.state.dream.isNSFW} onChange={()=>{
+                                    let dream = this.state.dream;
                                     dream.isNSFW = !dream.isNSFW;
-                                    this.setState({dreamToEdit: dream});
+                                    this.setState({dream: dream});
                                 }}/>
                             </Col>
                         </Row>
                     </FormGroup>
                     <FormGroup>
-                        <Button disabled={(!this.state.dreamToEdit.content && !this.state.dreamToEdit.title)} type="submit">UPDATE</Button>
+                        <Button disabled={(!this.state.dream.content && !this.state.dream.title)} type="submit">UPDATE</Button>
                     </FormGroup>
                 </Form>
                 </ModalBody>
