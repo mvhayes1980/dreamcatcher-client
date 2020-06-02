@@ -57,7 +57,7 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
         return(
             <div>
                 <Form onSubmit={(e:FormEvent)=> {this.handleSubmit(e)}}>
-                    <h3>New Dream</h3>
+                    <h3 id="nd">New Dream</h3>
                     <FormGroup>
                         <Label htmlFor="title">Title:</Label>
                         <Input name="title" value={this.state.dream.title} onChange={e => {
@@ -110,7 +110,7 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
                         </Row>
                     </FormGroup>
                     <FormGroup>
-                        <Button disabled={(!this.state.dream.content && !this.state.dream.title)} type="submit">Post</Button>
+                        <Button disabled={(!this.state.dream.content && !this.state.dream.title)} type="submit">POST</Button>
                     </FormGroup>
                 </Form>
             </div>

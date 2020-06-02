@@ -66,7 +66,7 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
     render() {
         return(
             <Form onSubmit={(e: FormEvent) => this.handleSubmit(e)}>
-                <h3>SIGNUP</h3>
+                <h3 id='signup'>SIGNUP</h3>
                 <Row>
                     <Col>
                         <FormGroup>
@@ -79,7 +79,8 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                     <Col> */}
                         <FormGroup>
                             <Label htmlFor="profilePic" >Profile Picture</Label>
-                            <Input value={this.state.profilePic} onChange={(e) => {this.setState({profilePic:e.target.value})}} name="profilePic" type="text" placeholder="Image URL"/>
+                            <Input value={this.state.profilePic} placeholder="Image URL" onChange={(e) => {this.setState({profilePic:e.target.value})}} name="profilePic" type="text" />
+
                             <Row>
                                 <Col>
                                     <Label htmlFor="nsfwOk">NSFW content OK?</Label>
@@ -87,7 +88,7 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                             </Row>
                             <Row>
                                 <Col>
-                                    <Input type="checkbox" onChange={(e) => {this.setState({nsfwOk: !this.state.nsfwOk})}} name="nsfwOk"/>
+                                    <Input type="checkbox" id="NSFWbox" onChange={(e) => {this.setState({nsfwOk: !this.state.nsfwOk})}} name="nsfwOk"/>
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -95,7 +96,7 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                 </Row>
                 <br/>
                 <FormGroup>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit">SUBMIT</Button>
                     {this.state.error ? <h3 style={{color: "red"}}>{this.state.error}</h3>: null}
                 </FormGroup>
             </Form>

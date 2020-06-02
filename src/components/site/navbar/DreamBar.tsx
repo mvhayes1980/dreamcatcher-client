@@ -11,23 +11,21 @@ export default class DreamBar extends React.Component <AcceptedProps>{
     public render() {
         return(
             <div className='mainDiv'>
-                <Navbar color="dark">
-                    <Link to="/"><img src={dreamcatcher} id="logo" height="100px" alt=""/></Link>
-                    <ul>
-                        <li style={{color: "white"}}>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li style={{color: "white"}}>
-                            <Link to="/profile">Profile</Link>
-                        </li>
-                        <li style={{color: "white"}}>
-                            <Link to="/myposts">My Posts</Link>
-                        </li>
-                        <li style={{color: "white"}}>
-                            <Link to="/public">Public Dreams</Link>
-                        </li>
-                    </ul>
-                        <Button onClick={() => this.props.clearToken()}>Logout</Button>
+                <Navbar >
+                
+                        <ul id="homeNav">
+                            <NavLink to="/">
+                                <img src={dreamcatcher} id="logo" height="55px" alt=""/>
+                            </NavLink>
+                            <a><Link id="hometab" to="/">Home</Link></a>
+                        </ul>
+                        <ul>
+                            <a><Link id="tabs" to="/public">Public</Link></a>
+                            <a><Link id="tabs" to="/myposts">My Posts</Link></a>
+                            <a><Link id="tabs" to="/profile">Profile</Link></a>
+                            
+                            <Button id="logoutbutt" onClick={() => this.props.clearToken()}>Logout</Button>
+                        </ul>
                 </Navbar>
             </div>
         )
