@@ -1,4 +1,3 @@
-
 body {
   /* background-color: rgb(255, 252, 242); */
   background-color: rgba(179, 139, 109, 0.24);
@@ -7,6 +6,8 @@ body {
 
 /* Auth Login/SignUp */
 #authDiv {
+  /* background-image: url('./assets/dreamcatcherAuthPage.gif'); */
+  /* background-color: #56494E; */
   background-repeat: no-repeat;
   background-size: 600px;
   height: 10vh;
@@ -110,7 +111,7 @@ a.nav-link{
 /* Home Jumbotron */
 div#homeJumbotron.jumbotron {
   text-align: center;
-  background-image: url('./assets/dreamcatcherJumbotron.gif');
+  background-image: url('./assets/dreamcatcherJumbotronFinal.gif');
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh !important;
@@ -137,6 +138,8 @@ div#homeJumbotron.jumbotron {
 #profileHead {
   text-align: center;
   margin-bottom: 30px;
+  font-weight: 700;
+  font-variant: small-caps;
 }
 
 #profileForm {
@@ -319,4 +322,29 @@ div#homeJumbotron.jumbotron {
 
 .trademark img {
   margin-top: 10px;
+
+}
+
+#publicDreams {
+  font-variant: small-caps;
+}
+
+#updateDream {
+  font-variant: small-caps;
+}
+
+#updateButton {
+  background-color: #56494E !important;
+}
+
+#submitCommentButton {
+  background-color: #56494E !important;
+}
+
+#saveChanges {
+  background-color: #56494E !important;
+}
+
+#comment {
+  font-variant: small-caps;
 }
