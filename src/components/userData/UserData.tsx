@@ -124,7 +124,7 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
         return(
             <div>
                 {this.state.done ? <Redirect to="/"/> : null}
-                <h1 id="profileHead">My Dreamcatcher Profile</h1>
+                <h1 id="profileHead">MY DREAMCATCHER PROFILE</h1>
                 <Row id="profileRow">
                     <Col md={{size: 6, offset:3}}>
                         <Form id="profileForm" onSubmit={(e: FormEvent) => this.handleSubmit(e)}>
@@ -147,8 +147,8 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
                             <Row>
                                 <Col>
                                     <FormGroup>
-                                        <Label htmlFor="profilePic" >Profile Picture (image url)</Label>
-                                        <Input value={this.state.user.profilePic} onChange={(e) => {
+                                        <Label htmlFor="profilePic" >Profile Picture</Label>
+                                        <Input value={this.state.user.profilePic} placeholder="Image URL" onChange={(e) => {
                                             let newUser = this.state.user;
                                             newUser.profilePic = e.target.value;
                                             this.setState({user: newUser})
@@ -168,8 +168,8 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
                                 </Col>
                             </Row>
                             <FormGroup>
-                                <Button type="submit" disabled={this.compareUsers()}>SAVE CHANGES</Button>
-                                <Button color="danger" onClick={() => {this.deleteUser()}}>DELETE</Button>
+                                <Button id="saveChanges" type="submit" disabled={this.compareUsers()}>SAVE CHANGES</Button>
+                                <Button color="danger" onClick={() => {this.deleteUser()}}>DELETE USER</Button>
 
                                 {this.state.error ? <h3 style={{color: "red"}}>{this.state.error}</h3>: null}
                             </FormGroup>

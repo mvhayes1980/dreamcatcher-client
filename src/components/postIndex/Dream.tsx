@@ -17,13 +17,13 @@ type AcceptedProps = {
 
 type DreamState = {
     dream: DreamType,
-    user:UserType,
+    user: UserType,
     hideNSFW: boolean,
     isReplying: boolean,
     commentToEdit: CommentType,
 }
 
-export default class Dream extends React.Component <AcceptedProps, DreamState> {
+export default class Dream extends React.Component<AcceptedProps, DreamState> {
     constructor(props: AcceptedProps) {
         super(props);
         this.state = {
@@ -39,8 +39,8 @@ export default class Dream extends React.Component <AcceptedProps, DreamState> {
 
     }
 
-    setCommentToEdit(comment: CommentType){
-        this.setState({commentToEdit: comment});
+    setCommentToEdit(comment: CommentType) {
+        this.setState({ commentToEdit: comment });
     }
 
     deleteComment(comment: CommentType) {
@@ -51,8 +51,8 @@ export default class Dream extends React.Component <AcceptedProps, DreamState> {
                 'authorization': this.props.sessionToken
             }
         })
-            .then(res=>res.json())
-            .then(res=> {
+            .then(res => res.json())
+            .then(res => {
                 console.log("DELETE STATUS:", res);
                 this.props.fetchUser();
             })
@@ -61,52 +61,49 @@ export default class Dream extends React.Component <AcceptedProps, DreamState> {
     commentMapp() {
         return this.state.dream.comments.reverse().map((comment, index) => {
             return (
-                <Comment deleteComment={(comment: CommentType)=> {this.deleteComment(comment)}} key={index} setCommentToEdit={(comment: CommentType)=> this.setCommentToEdit(comment)} comment={comment}/>
+                <Comment deleteComment={(comment: CommentType) => { this.deleteComment(comment) }} key={index} setCommentToEdit={(comment: CommentType) => this.setCommentToEdit(comment)} comment={comment} />
             )
         })
     }
 
     render() {
-        return(
+        return (
             <div>
-                <Card style={{marginBottom: "15px"}}>
+                <Card style={{ marginBottom: "15px" }}>
                     <CardHeader>
-                    <CardTitle id="md">{this.props.dream.title}</CardTitle>
-                    <p>by {this.state.dream.user?.username}</p>
-                    <p id="dreamCat">{this.props.dream.category}</p>
+                        <CardTitle id="md">{this.props.dream.title}</CardTitle>
+                        <p id="cardUser">by {this.state.dream.user?.username}</p>
+                        <p id="dreamCat">{this.props.dream.category}</p>
                     </CardHeader>
                     <CardBody>
-                    <p>{this.state.hideNSFW ? "(This content contains NSFW material)..." : this.props.dream.content}</p>
-                    {this.state.hideNSFW ? <Button onClick={()=>this.setState({hideNSFW:false})}>view</Button> : null}
+                        <p id="cardContent">{this.state.hideNSFW ? "(This content contains NSFW material)..." : this.props.dream.content}</p>
+                        {this.state.hideNSFW ? <Button onClick={() => this.setState({ hideNSFW: false })}>view</Button> : null}
 
+                        <hr />
 
-                    {this.props.user.id === this.props.dream.userId || this.props.user.isAdmin ? 
-                    <div>
-                        <Button color="danger" onClick={()=>{this.props.deleteDream(this.props.dream)}}>DELETE</Button>
-                        
-                        <Button color="warning" onClick={()=>{this.props.setDreamToEdit(this.props.dream)}}>UPDATE</Button>
-                    </div>
+                        {this.props.user.id === this.props.dream.userId || this.props.user.isAdmin ?
+                        <div>
+                                <Button color="danger" id="deleteButt" onClick={() => { this.props.deleteDream(this.props.dream) }}>DELETE DREAM</Button>
+                                <Button color="warning" id="updateButt" onClick={() => { this.props.setDreamToEdit(this.props.dream) }}>UPDATE DREAM</Button>
+                            </div>
+                            : null}
 
-                    : null}
-                    <hr/>
+                        <hr />
 
                         <div>
-                            <h3 style={{width:"fit-content", display:"inline", margin: "auto"}}>Replies</h3>
-                            <Button onClick={()=>{this.props.setDreamToComment(this.props.dream)}}>REPLY</Button>
-
+                            <Button id="replyButt" onClick={() => { this.props.setDreamToComment(this.props.dream) }}>REPLY TO DREAM</Button>
+                            {/* <h3 id="reply" style={{width:"fit-content", display:"inline"}}> Reply to this dream</h3> */}
                         </div>
+                        
+                        {this.props.dream.comments.length > 0 ?
+                            <div>
+                                {this.commentMapp()}
+                            </div>
+                            : null}
 
-                    {this.props.dream.comments.length > 0 ? 
-                    
-                    <div>
-                        {this.commentMapp()}
-                    </div>
-                    
-                    :null}
-
-                    {this.state.commentToEdit.id !== 0 ? 
-                        <CommentEdit sessionToken={this.props.sessionToken} comment={this.state.commentToEdit} setCommentToEdit={(comment: CommentType) => this.setCommentToEdit(comment)} fetchUser={()=>this.props.fetchUser()} />
-                    : null}
+                        {this.state.commentToEdit.id !== 0 ?
+                            <CommentEdit sessionToken={this.props.sessionToken} comment={this.state.commentToEdit} setCommentToEdit={(comment: CommentType) => this.setCommentToEdit(comment)} fetchUser={() => this.props.fetchUser()} />
+                            : null}
 
 
                     </CardBody>

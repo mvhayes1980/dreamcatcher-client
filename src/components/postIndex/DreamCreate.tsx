@@ -13,7 +13,7 @@ type DreamCreateState = {
     dream: DreamType
 }
 
-export default class DreamCreate extends React.Component <AcceptedProps, DreamCreateState> {
+export default class DreamCreate extends React.Component<AcceptedProps, DreamCreateState> {
     constructor(props: AcceptedProps) {
         super(props);
         this.state = {
@@ -27,7 +27,7 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
         }
     }
 
-    handleSubmit(e:FormEvent) {
+    handleSubmit(e: FormEvent) {
         e.preventDefault();
         fetch(`${APIURL}/api/dreams/create`, {
             method: "post",
@@ -39,39 +39,41 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
                 dream: this.state.dream
             })
         })
-            .then(res=>res.json())
-            .then(res=> {
+            .then(res => res.json())
+            .then(res => {
                 console.log(res);
-                this.setState({dream: {
-                    content: "",
-                    category: "joy",
-                    isNSFW: false,
-                    title: '',
-                    comments: []
-                }})
+                this.setState({
+                    dream: {
+                        content: "",
+                        category: "joy",
+                        isNSFW: false,
+                        title: '',
+                        comments: []
+                    }
+                })
                 this.props.fetchUser();
             })
     }
 
     render() {
-        return(
-            <div>
-                <Form onSubmit={(e:FormEvent)=> {this.handleSubmit(e)}}>
+        return (
+            <div className="newDream">
+                <Form onSubmit={(e: FormEvent) => { this.handleSubmit(e) }}>
                     <h3 id="nd">New Dream</h3>
                     <FormGroup>
                         <Label htmlFor="title">Title:</Label>
                         <Input name="title" value={this.state.dream.title} onChange={e => {
                             let dream = this.state.dream;
                             dream.title = e.target.value;
-                            this.setState({dream: dream});
-                        }}/>
+                            this.setState({ dream: dream });
+                        }} />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="category">Category:</Label>
                         <Input name="category" value={this.state.dream.category} type="select" onChange={e => {
                             let dream = this.state.dream;
                             dream.category = e.target.value;
-                            this.setState({dream: dream});
+                            this.setState({ dream: dream });
                         }}>
                             <option value={"joy"}>Joy</option>
                             <option value={"despair"}>Despair</option>
@@ -92,7 +94,7 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
                         <Input name="content" value={this.state.dream.content} onChange={(e) => {
                             let dream = this.state.dream;
                             dream.content = e.target.value;
-                            this.setState({dream: dream});
+                            this.setState({ dream: dream });
                         }} type="textarea" draggable="false" maxLength={250}></Input>
                     </FormGroup>
                     <FormGroup>
@@ -101,16 +103,16 @@ export default class DreamCreate extends React.Component <AcceptedProps, DreamCr
                                 <Label htmlFor="isNSFW">NSFW?</Label>
                             </Col>
                             <Col>
-                                <Input type="checkbox" checked={this.state.dream.isNSFW} onChange={()=>{
+                                <Input type="checkbox" checked={this.state.dream.isNSFW} onChange={() => {
                                     let dream = this.state.dream;
                                     dream.isNSFW = !dream.isNSFW;
-                                    this.setState({dream: dream});
-                                }}/>
+                                    this.setState({ dream: dream });
+                                }} />
                             </Col>
                         </Row>
                     </FormGroup>
                     <FormGroup>
-                        <Button disabled={(!this.state.dream.content && !this.state.dream.title)} type="submit">POST</Button>
+                        <Button disabled={(!this.state.dream.content && !this.state.dream.title)} type="submit" id="postButt">POST DREAM</Button>
                     </FormGroup>
                 </Form>
             </div>
