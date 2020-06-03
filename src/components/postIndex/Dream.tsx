@@ -71,6 +71,7 @@ export default class Dream extends React.Component<AcceptedProps, DreamState> {
             <div>
                 <Card style={{ marginBottom: "15px" }}>
                     <CardHeader>
+
                         <CardTitle id="md">{this.props.dream.title}</CardTitle>
                         <p id="cardUser">by {this.state.dream.user?.username}</p>
                         <p id="dreamCat">{this.props.dream.category}</p>
@@ -78,6 +79,7 @@ export default class Dream extends React.Component<AcceptedProps, DreamState> {
                     <CardBody>
                         <p id="cardContent">{this.state.hideNSFW ? "(This content contains NSFW material)..." : this.props.dream.content}</p>
                         {this.state.hideNSFW ? <Button id="viewButton" onClick={() => this.setState({ hideNSFW: false })}>view</Button> : null}
+
 
                         <hr />
 
@@ -87,6 +89,7 @@ export default class Dream extends React.Component<AcceptedProps, DreamState> {
                                 <Button color="warning" id="updateButt" onClick={() => { this.props.setDreamToEdit(this.props.dream) }}>UPDATE DREAM</Button>
                             </div>
                             : null}
+
 
                         <hr />
 

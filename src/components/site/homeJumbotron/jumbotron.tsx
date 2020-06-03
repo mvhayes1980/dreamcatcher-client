@@ -21,9 +21,10 @@ export default class Home extends React.Component {
                             {/* <Button color="primary">Learn More</Button> */}
                         </p>
                     </Jumbotron>
-                    <div className="cards">
+                    {/* <div className="cards">
+
                         <CardDeck>
-                            {/* <Card className="leftCard">
+                                <Card className="leftCard">
                                 <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
                                 <CardBody>
                                 <CardTitle>Card title</CardTitle>
@@ -31,7 +32,7 @@ export default class Home extends React.Component {
                                 <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
                                 <Button>Button</Button>
                                 </CardBody>
-                            </Card> */}
+                            </Card>
                             <Card className="midCard">
                                 <CardImg top width="100%" src={Dream} alt="Card image cap" />
                                 <CardBody>
@@ -50,7 +51,7 @@ export default class Home extends React.Component {
                                 </CardBody>
                             </Card>
                         </CardDeck>
-                    </div>
+                    </div>*/}
                     <div className="mainfoot">
                         <div className="leftFoot">
                             <div className='trademark'>

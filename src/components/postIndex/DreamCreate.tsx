@@ -112,7 +112,9 @@ export default class DreamCreate extends React.Component<AcceptedProps, DreamCre
                         </Row>
                     </FormGroup>
                     <FormGroup>
+
                         <Button disabled={(!this.state.dream.content && !this.state.dream.title)} type="submit" id="postButt">POST DREAM</Button>
+
                     </FormGroup>
                 </Form>
             </div>
