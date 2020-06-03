@@ -62,7 +62,7 @@ export default class PublicIndex extends React.Component<AcceptedProps, PublicIn
                 <Row>
                     <Col>
                     
-                        <Input name="category" value={this.state.category} type="select" onChange={e => {this.setState({category: e.target.value, categoryChanged: true})}}>
+                        <Input id="dreamType" name="category" value={this.state.category} type="select" onChange={e => {this.setState({category: e.target.value, categoryChanged: true})}}>
                             <option value={"joy"}>Joy</option>
                             <option value={"despair"}>Despair</option>
                             <option value={"fear"}>Fear</option>
@@ -84,7 +84,7 @@ export default class PublicIndex extends React.Component<AcceptedProps, PublicIn
 
 
                     </Col>
-                    <Col>
+                    <Col className="newDream">
                         <DreamCreate sessionToken={this.props.sessionToken} fetchUser={()=>{this.props.fetchUser()}}/>
                     </Col>
                 </Row>

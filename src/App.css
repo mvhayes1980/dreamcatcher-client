@@ -66,7 +66,6 @@ h1.display-3{
   background-color: #56494E !important;
   margin: 0;
   padding: 0;
-  position: sticky;
   overflow: hidden;
 }
 
@@ -104,7 +103,7 @@ a.nav-link{
 
 #logoutbutt {
   margin-right: 40px;
-  margin-left: 15px;
+  margin-left: 8px;
   background-color: transparent;
   border-width: 0;
 }
@@ -123,6 +122,16 @@ div#homeJumbotron.jumbotron {
 
 #clearButton {
   text-align: center;
+}
+
+/* Cards on Home */
+
+.homeRule {
+  margin-top: 10px;
+}
+
+.cards {
+  margin: 40px 50px 30px 50px;
 }
 
 /* User Profile */
@@ -165,7 +174,6 @@ div#homeJumbotron.jumbotron {
   font-size: 35px;
 }
 
-
 #commentPic {
   width: 50px;
   float: left;
@@ -181,4 +189,136 @@ div#homeJumbotron.jumbotron {
 
 .post {
   margin: 20px 50px 0 50px;
+}
+
+.newDream {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2rem;
+}
+
+#postButt {
+  background-color: #56494E !important;
+  border-width: 0;
+  font-variant: small-caps;
+  padding-bottom: 8px;
+  color: white;
+}
+
+/* Dreams in Cards */
+
+#md.card-title {
+  font-weight: 700;
+  margin: 0 !important;
+}
+
+#cardUser {
+  font-style: italic;
+  font-size: 12px;
+  margin-bottom: 5px !important;
+}
+
+#dreamCat {
+  font-variant: small-caps;
+  margin-bottom: auto;
+}
+
+#cardContent {
+  font-size: 14px;
+}
+
+#deleteButt {
+  background-color: #56494E !important;
+  border-width: 0;
+  margin-right: 10px;
+  font-variant: small-caps;
+  padding-bottom: 8px;
+}
+
+#updateButt {
+  background-color: #56494E !important;
+  border-width: 0;
+  font-variant: small-caps;
+  padding-bottom: 8px;
+  color: white;
+}
+
+#editButt {
+  background-color: #56494E !important;
+  border-width: 0;
+  font-variant: small-caps;
+  padding-bottom: 8px;
+  color: white;
+}
+
+#reply {
+  font-variant: small-caps;
+}
+
+#replyButt {
+  background-color: #56494E !important;
+  border-width: 0;
+  margin-left: 10px;
+  margin-bottom: 9px;
+  font-variant: small-caps;
+  padding-bottom: 8px;
+  color: white;
+}
+
+/* My comments */
+
+#commentCard {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+
+#commentUser {
+  font-size: small;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+#commentCont {
+  font-size: smaller;
+  font-style: italic;
+}
+
+#whereComment {
+  font-style: italic;
+  font-size: small;
+  margin-bottom: 5px;
+}
+
+#whatComment {  
+  font-size: smaller;
+}
+
+#dreamType {
+  margin-bottom: 20px;
+}
+
+/* Footer */
+
+.leftFoot {
+  background-color: #56494E;
+  color: white;
+  text-align: center;
+  height: 52px;
+  min-height: 100%;
+}
+
+.trademark {
+  display: inline-flex;
+  text-align: center;
+}
+
+.trademark p {
+  margin-top: 8px;
+  font-variant: small-caps;
+  font-size: 20px;
+}
+
+.trademark img {
+  margin-top: 10px;
 }
