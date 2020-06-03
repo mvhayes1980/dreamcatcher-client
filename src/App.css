@@ -125,3 +125,32 @@ div#homeJumbotron.jumbotron {
     transform: rotate(360deg);
   }
 }
+
+footer {
+  background-color: #343A40;
+  text-align: left;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+footer ul {
+  list-style: none;
+  display: inline;
+  line-height: 4.5;
+  list-style-position: inside;
+}
+
+footer ul li a{
+  color: white;
+}
+footer ul li {
+  display: inline;
+  color: white;
+  margin-right: 20px;
+}
+
+/* #dreamBar {
+  position: fixed;
+  width: 100%;
+} */

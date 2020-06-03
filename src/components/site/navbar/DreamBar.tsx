@@ -10,7 +10,7 @@ type AcceptedProps = {
 export default class DreamBar extends React.Component <AcceptedProps>{
     public render() {
         return(
-            <div className='mainDiv'>
+            <div id='dreamBar'>
                 <Navbar color="dark">
                     <Link to="/"><img src={dreamcatcher} id="logo" height="100px" alt=""/></Link>
                     <ul>

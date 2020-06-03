@@ -1,6 +1,6 @@
 import * as React from 'react';
 import DreamBar from './navbar/DreamBar';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TopJumbotron from './homeJumbotron/jumbotron';
 import { Jumbotron, Button } from 'reactstrap';
 import dreams from '../../assests/dreamcatcher.gif';
@@ -89,6 +89,16 @@ export default class Home extends React.Component <AcceptedProps, HomeState> {
                         <Route exact path="/public"><PublicIndex fetchUser={()=>this.fetchUser()}sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
                     </Switch>
                     : null}
+                    <footer>
+                        <ul>
+                            <li>
+                                <Link to="/about">About</Link>
+                            </li>
+                            <li>
+                            <Link to="/contact">Contact Us</Link>
+                            </li>
+                        </ul>
+                    </footer>
                 </BrowserRouter>
 
 
