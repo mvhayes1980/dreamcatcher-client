@@ -72,27 +72,27 @@ export default class Dream extends React.Component <AcceptedProps, DreamState> {
                 <Card style={{marginBottom: "15px"}}>
                     <CardHeader>
                     <CardTitle id="md">{this.props.dream.title}</CardTitle>
-                    <p>by {this.state.dream.user?.username}</p>
+                    <p id="cardUser">by {this.state.dream.user?.username}</p>
                     <p id="dreamCat">{this.props.dream.category}</p>
                     </CardHeader>
                     <CardBody>
-                    <p>{this.state.hideNSFW ? "(This content contains NSFW material)..." : this.props.dream.content}</p>
+                    <p id="cardContent">{this.state.hideNSFW ? "(This content contains NSFW material)..." : this.props.dream.content}</p>
                     {this.state.hideNSFW ? <Button onClick={()=>this.setState({hideNSFW:false})}>view</Button> : null}
 
 
                     {this.props.user.id === this.props.dream.userId || this.props.user.isAdmin ? 
                     <div>
-                        <Button color="danger" onClick={()=>{this.props.deleteDream(this.props.dream)}}>DELETE</Button>
+                        <Button color="danger" id="deleteButt" onClick={()=>{this.props.deleteDream(this.props.dream)}}>DELETE</Button>
                         
-                        <Button color="warning" onClick={()=>{this.props.setDreamToEdit(this.props.dream)}}>UPDATE</Button>
+                        <Button color="warning" id="updateButt" onClick={()=>{this.props.setDreamToEdit(this.props.dream)}}>UPDATE</Button>
                     </div>
 
                     : null}
                     <hr/>
 
                         <div>
-                            <h3 style={{width:"fit-content", display:"inline", margin: "auto"}}>Replies</h3>
-                            <Button onClick={()=>{this.props.setDreamToComment(this.props.dream)}}>REPLY</Button>
+                            <h3 id="reply" style={{width:"fit-content", display:"inline"}}>Replies</h3>
+                            <Button id="replyButt" onClick={()=>{this.props.setDreamToComment(this.props.dream)}}>REPLY</Button>
 
                         </div>
 
