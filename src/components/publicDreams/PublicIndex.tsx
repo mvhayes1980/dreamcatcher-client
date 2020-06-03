@@ -57,7 +57,7 @@ export default class PublicIndex extends React.Component<AcceptedProps, PublicIn
 
     render() {
         return (
-            <div>
+            <div id="publicIndexDiv">
                 <h1 id="publicDreams">Public Dreams</h1>
                 <Row>
                     <Col>

@@ -190,7 +190,7 @@ div#homeJumbotron.jumbotron {
 }
 
 .post {
-  margin: 20px 50px 0 50px;
+  margin: 20px 50px 90px 50px;
 }
 
 .newDream {
@@ -301,6 +301,11 @@ div#homeJumbotron.jumbotron {
 }
 
 /* Footer */
+#mainFoot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
 .leftFoot {
   background-color: #56494E;
@@ -309,6 +314,20 @@ div#homeJumbotron.jumbotron {
   height: 52px;
   min-height: 100%;
 }
+
+#publicIndexDiv {
+  width: 95%;
+  margin: auto;
+}
+
+/* .mainDiv {
+  width: 100%;
+}
+
+.main {
+  width: 90%;
+  margin: auto;
+} */
 
 .trademark {
   display: inline-flex;
