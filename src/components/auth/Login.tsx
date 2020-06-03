@@ -63,7 +63,7 @@ export default class Login extends React.Component <AcceptedProps, LoginState> {
     render() {
         return(
             <Form onSubmit={(e: FormEvent)=> {this.handleSubmit(e)}}>
-                <h3>LOGIN</h3>
+                <h3 id="login">LOGIN</h3>
                 <FormGroup>
                     <Label htmlFor="username">Dreamer's Name</Label>
                     <Input value={this.state.username} onChange={(e) => {this.setState({username:e.target.value})}} name="username"/>
@@ -71,7 +71,7 @@ export default class Login extends React.Component <AcceptedProps, LoginState> {
                     <Input value={this.state.password} onChange={(e) => {this.setState({password:e.target.value})}}type="password" name="password"/>
                 </FormGroup>
                 <FormGroup>
-                    <Button type="submit">SUBMIT</Button>
+                    <Button id="submit" type="submit">SUBMIT</Button>
                     {this.state.error ? <h3 style={{color: "red"}}>{this.state.error}</h3>: null}
                 </FormGroup>
             </Form>
