@@ -11,13 +11,13 @@ export default class CommentTable extends React.Component<AcceptedProps> {
     displayComments() {
         return this.props.comments.map((comment, index) => {
             return (
-                <Card>
+                <Card id="commentCard">
                     <div>
                         <img id="commentPic" src={this.props.user.profilePic} height="50" alt=""/>
                         <p id="commentName">{this.props.user.username}: </p>
                     </div>
-                    <p>on "{comment.dream?.title}"</p>
-                    <h4>{comment.content}</h4>
+                    <p id="whereComment">on "{comment.dream?.title}"</p>
+                    <p id="whatComment">{comment.content}</p>
                 </Card>
             )
         })
