@@ -96,7 +96,7 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                 </Row>
                 <br/>
                 <FormGroup>
-                    <Button type="submit">SUBMIT</Button>
+                    <Button id="submit" type="submit">SUBMIT</Button>
                     {this.state.error ? <h3 style={{color: "red"}}>{this.state.error}</h3>: null}
                 </FormGroup>
             </Form>

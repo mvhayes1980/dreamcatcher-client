@@ -78,7 +78,7 @@ export default class Dream extends React.Component<AcceptedProps, DreamState> {
                     </CardHeader>
                     <CardBody>
                         <p id="cardContent">{this.state.hideNSFW ? "(This content contains NSFW material)..." : this.props.dream.content}</p>
-                        {this.state.hideNSFW ? <Button onClick={() => this.setState({ hideNSFW: false })}>view</Button> : null}
+                        {this.state.hideNSFW ? <Button id="viewButton" onClick={() => this.setState({ hideNSFW: false })}>view</Button> : null}
 
 
                         <hr />
@@ -95,8 +95,6 @@ export default class Dream extends React.Component<AcceptedProps, DreamState> {
 
                         <div>
                             <Button id="replyButt" onClick={() => { this.props.setDreamToComment(this.props.dream) }}>REPLY TO DREAM</Button>
-                            {/* <h3 id="reply" style={{width:"fit-content", display:"inline"}}> Reply to this dream</h3> */}
-
                         </div>
                         
                         {this.props.dream.comments.length > 0 ?

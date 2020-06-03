@@ -1,19 +1,15 @@
 body {
-  /* background-color: rgb(255, 252, 242); */
   background-color: rgba(179, 139, 109, 0.24);
 }
 
 
 /* Auth Login/SignUp */
 #authDiv {
-  /* background-image: url('./assets/dreamcatcherAuthPage.gif'); */
-  /* background-color: #56494E; */
   background-repeat: no-repeat;
   background-size: 600px;
   height: 10vh;
   width: 50vw;
   margin: auto;
-  /* overflow: hidden; */
   margin-top: 6%;
 }
 
@@ -26,11 +22,7 @@ body {
   padding: 10px;
   height: auto;
   opacity: 100%;
-  /* background-color: #56494E; */
   background-color: rgba(179, 139, 109, 0.24);
-  /* color: white; */
-  /* background-color: transparent; */
-  /* border: double 8px rgba(218, 214, 195, 0.521); */
   border: double 8px grey;
 
 }
@@ -40,13 +32,22 @@ body {
   position: relative;
   margin: auto;
   width: fit-content;
+  background-color: #56494E !important;
+  font-variant: small-caps;
 }
 
 #signup {
   text-align: center;
+  font-variant: small-caps;
 }
 #login {
   text-align: center;
+  font-variant: small-caps;
+}
+
+#submit {
+  background-color: #56494E !important;
+  font-variant: small-caps;
 }
 
 .form-check-input {
@@ -346,5 +347,10 @@ div#homeJumbotron.jumbotron {
 }
 
 #comment {
+  font-variant: small-caps;
+}
+
+#viewButton {
+  background-color: #56494E !important;
   font-variant: small-caps;
 }
