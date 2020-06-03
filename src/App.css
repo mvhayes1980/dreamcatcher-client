@@ -112,7 +112,7 @@ a.nav-link{
 /* Home Jumbotron */
 div#homeJumbotron.jumbotron {
   text-align: center;
-  background-image: url('./assets/dreamcatcherJumbotronFinal.gif');
+  background-image: url('./assets/dreamcatcherjumbotronfinal.gif');
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh !important;
@@ -362,7 +362,14 @@ div#homeJumbotron.jumbotron {
 }
 
 #saveChanges {
+  display: inline-block;
   background-color: #56494E !important;
+  margin: 0px 50px 40px 50px;
+}
+
+#deleteUser {
+  display: inline-block;
+  margin: 0px 50px 40px 50px;
 }
 
 #comment {
