@@ -52,14 +52,7 @@ export default class Home extends React.Component {
                             </Card>
                         </CardDeck>
                     </div>*/}
-                    <div className="mainfoot">
-                        <div className="leftFoot">
-                            <div className='trademark'>
-                                <a href="/"><img src={DreamCatcher} height='30px' alt="" /></a>
-                                <a><p>DreamCatcher</p></a>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         )

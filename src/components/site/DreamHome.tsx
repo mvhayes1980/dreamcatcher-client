@@ -1,6 +1,6 @@
 import * as React from 'react';
 import DreamBar from './navbar/DreamBar';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TopJumbotron from './homeJumbotron/jumbotron';
 import { Jumbotron, Button } from 'reactstrap';
 import dreams from '../../assests/dreamcatcher.gif';
@@ -9,6 +9,7 @@ import UserData from '../userData/UserData';
 import PostIndex from '../postIndex/PostIndex';
 import { DreamType, CommentType, UserType } from '../../types/CustomTypes';
 import PublicIndex from '../publicDreams/PublicIndex';
+import DreamCatcher from '../../assets/dreamcatcherWhite.png';
 
 type AcceptedProps = {
     clearToken: () => void
@@ -78,26 +79,29 @@ export default class Home extends React.Component <AcceptedProps, HomeState> {
     render() {
         return(
             <div className="main">
-            <div className='mainDiv'>
-                <BrowserRouter>
-                        <DreamBar clearToken={() => this.props.clearToken()}/>
-                    {this.state.user.id !== 0 ? 
-                    <Switch>
-                        <Route exact path="/"><TopJumbotron/></Route>
-                        <Route exact path="/profile"><UserData clearToken={() => {this.props.clearToken()}} fetchUser={()=>this.fetchUser()} sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
-                        <Route exact path="/myposts"><PostIndex user={this.state.user}fetchUser={()=>this.fetchUser()}dreams={this.state.user.dreams} sessionToken={this.props.sessionToken}/></Route>
-                        <Route exact path="/public"><PublicIndex fetchUser={()=>this.fetchUser()}sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
-                    </Switch>
-                    : null}
-                </BrowserRouter>
+                <div className='mainDiv'>
+                    <BrowserRouter>
+                            <DreamBar clearToken={() => this.props.clearToken()}/>
+                        {this.state.user.id !== 0 ? 
+                        <Switch>
+                            <Route exact path="/"><TopJumbotron/></Route>
+                            <Route exact path="/profile"><UserData clearToken={() => {this.props.clearToken()}} fetchUser={()=>this.fetchUser()} sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
+                            <Route exact path="/myposts"><PostIndex user={this.state.user}fetchUser={()=>this.fetchUser()}dreams={this.state.user.dreams} sessionToken={this.props.sessionToken}/></Route>
+                            <Route exact path="/public"><PublicIndex fetchUser={()=>this.fetchUser()}sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
+                        </Switch>
+                        : null}
 
-
-                
-                <div className="body">
-                    
+                        <div id="mainFoot">
+                            <div className="leftFoot">
+                                <div className='trademark'>
+                                    <a href="/"><img src={DreamCatcher} height='30px' alt="" /></a>
+                                    <a><p>DreamCatcher</p></a>
+                                </div>
+                            </div>
+                        </div>
+                    </BrowserRouter>
                 </div>
             </div>
-        </div>
         )
     }
 }
