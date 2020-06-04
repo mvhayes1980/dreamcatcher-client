@@ -2,7 +2,7 @@ import * as React from 'react';
 import Home from './components/site/DreamHome';
 import Auth from './components/auth/Auth';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 type AppState = {
   sessionToken: string,
