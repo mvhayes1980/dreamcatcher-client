@@ -374,13 +374,14 @@ div#homeJumbotron.jumbotron {
 
 #saveChanges {
   display: inline-block;
+  font-variant: small-caps;
   background-color: #56494E !important;
-  margin: 0px 50px 40px 50px;
+  margin: 0px 50px 100px 50px;
 }
 
 #deleteUser {
   display: inline-block;
-  margin: 0px 50px 40px 50px;
+  margin: 0px 50px 100px 50px;
   font-variant: small-caps;
 }
 
