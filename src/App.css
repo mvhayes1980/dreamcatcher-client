@@ -130,7 +130,7 @@ div#homeJumbotron.jumbotron {
 }
 
 .cards {
-  margin: 40px 50px 30px 50px;
+  margin: 40px 50px 100px 50px;
 }
 
 /* User Profile */
@@ -179,13 +179,23 @@ div#homeJumbotron.jumbotron {
   width: 50px;
   float: left;
   display: block;
+  border-radius: 500px;
+  margin-right: 15px;
+  margin-top: 16px;
+  margin-bottom: 4px;
 }
 
 #commentName {
   float: left;
   display: block;
-  line-height: 3;
+  line-height: 4;
   font-size: large;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+#commentHR {
+  margin: 0px 0px;
 }
 
 .post {
@@ -289,10 +299,12 @@ div#homeJumbotron.jumbotron {
   font-style: italic;
   font-size: small;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 #whatComment {  
   font-size: smaller;
+  margin-top: 5px;
 }
 
 #dreamType {
@@ -384,3 +396,5 @@ div#homeJumbotron.jumbotron {
 #deleteUser {
   font-variant: small-caps;
 }
+
+
