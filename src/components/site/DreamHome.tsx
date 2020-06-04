@@ -91,7 +91,7 @@ export default class Home extends React.Component <AcceptedProps, HomeState> {
                         </Switch>
                         : null}
 
-                        <div className="mainfoot">
+                        <div id="mainfoot">
                             <div className="leftFoot">
                                 <div className='trademark'>
                                     <a href="/"><img src={DreamCatcher} height='30px' alt="" /></a>
