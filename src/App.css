@@ -344,6 +344,7 @@ div#homeJumbotron.jumbotron {
 
 #saveChanges {
   background-color: #56494E !important;
+  font-variant: small-caps;
 }
 
 #comment {
@@ -352,5 +353,9 @@ div#homeJumbotron.jumbotron {
 
 #viewButton {
   background-color: #56494E !important;
+  font-variant: small-caps;
+}
+
+#deleteUser {
   font-variant: small-caps;
 }
