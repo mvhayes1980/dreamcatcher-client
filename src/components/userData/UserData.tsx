@@ -169,7 +169,7 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
                             </Row>
                             <FormGroup>
                                 <Button id="saveChanges" type="submit" disabled={this.compareUsers()}>SAVE CHANGES</Button>
-                                <Button color="danger" onClick={() => {this.deleteUser()}}>DELETE USER</Button>
+                                <Button id="deleteUser" color="danger" onClick={() => {this.deleteUser()}}>DELETE USER</Button>
 
                                 {this.state.error ? <h3 style={{color: "red"}}>{this.state.error}</h3>: null}
                             </FormGroup>
