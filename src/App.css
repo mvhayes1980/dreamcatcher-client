@@ -131,7 +131,7 @@ div#homeJumbotron.jumbotron {
 }
 
 .cards {
-  margin: 40px 50px 30px 50px;
+  margin: 40px 50px 100px 50px;
 }
 
 /* User Profile */
@@ -190,7 +190,7 @@ div#homeJumbotron.jumbotron {
 }
 
 .post {
-  margin: 20px 50px 0 50px;
+  margin: 20px 50px 100px 50px;
 }
 
 .newDream {
@@ -358,4 +358,10 @@ div#homeJumbotron.jumbotron {
 
 #deleteUser {
   font-variant: small-caps;
+}
+
+#mainFoot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

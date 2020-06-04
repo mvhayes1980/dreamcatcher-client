@@ -5,7 +5,6 @@ import {
 } from 'reactstrap';
 import Dream from '../../../assets/dreams.jpg';
 import Team from '../../../assets/team.jpg';
-import DreamCatcher from '../../../assets/dreamcatcherWhite.png';
 
 export default class Home extends React.Component {
     render() {
@@ -39,14 +38,6 @@ export default class Home extends React.Component {
                                 </CardBody>
                             </Card>
                         </CardDeck>
-                    </div>
-                    <div className="mainfoot">
-                        <div className="leftFoot">
-                            <div className='trademark'>
-                                <a href="/"><img src={DreamCatcher} height='30px' alt="" /></a>
-                                <a><p>DreamCatcher</p></a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
