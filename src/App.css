@@ -369,6 +369,7 @@ div#homeJumbotron.jumbotron {
 #deleteUser {
   display: inline-block;
   margin: 0px 50px 40px 50px;
+  font-variant: small-caps;
 }
 
 #comment {
@@ -377,5 +378,9 @@ div#homeJumbotron.jumbotron {
 
 #viewButton {
   background-color: #56494E !important;
+  font-variant: small-caps;
+}
+
+#deleteUser {
   font-variant: small-caps;
 }
