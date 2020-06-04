@@ -35,7 +35,7 @@ export default class Home extends React.Component{
                                 <CardBody>
                                 <CardTitle>Tell us about your dreams!</CardTitle>
                                 <CardText>This site was made so you can tell other users about your dreams, whether they be dark, playful or NSFW. You can express any dream that you have here! </CardText>
-                                <Button>Button</Button>
+                                <a href="/public"><Button>Button</Button></a>
                                 </CardBody>
                             </Card>
                             <Card className="rightCard">
@@ -44,7 +44,7 @@ export default class Home extends React.Component{
                                 <CardTitle>Dream Catcher Team!</CardTitle>
                                 <CardSubtitle>More about us.</CardSubtitle>
                                 <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
-                                <Button>Button</Button>
+                                <a href="/"><Button>Button</Button></a>
                                 </CardBody>
                             </Card>
                         </CardDeck>
