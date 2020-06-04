@@ -100,7 +100,7 @@ export default class PublicDreamTable extends React.Component<AcceptedProps, Pub
 
     render() {
         return(
-            <div>
+            <div id="publicDreamsDiv">
                 {this.displayDreams()}
                 {this.state.dreamToComment.category ?
                     <DreamComment setDreamToComment={(dream: DreamType) => this.setDreamToComment(dream)} sessionToken={this.props.sessionToken} user={this.props.user} dream={this.state.dreamToComment}/>

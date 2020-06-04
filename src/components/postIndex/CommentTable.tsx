@@ -16,7 +16,8 @@ export default class CommentTable extends React.Component<AcceptedProps> {
                         <img id="commentPic" src={this.props.user.profilePic} height="50" alt=""/>
                         <p id="commentName">{this.props.user.username}: </p>
                     </div>
-                    <p id="whereComment">on "{comment.dream?.title}"</p>
+                    <p >on "{<span id="whereComment">{comment.dream?.title}</span>}"</p>
+                    <hr id="commentHR"/>
                     <p id="whatComment">{comment.content}</p>
                 </Card>
             )
