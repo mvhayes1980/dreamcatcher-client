@@ -22,7 +22,6 @@ export default class Home extends React.Component {
                         </p>
                     </Jumbotron>
                     <div className="cards">
-
                         <CardDeck>
                             <Card className="midCard">
                                 <CardImg top width="100%" src={Dream} alt="Card image cap" />
@@ -39,7 +38,7 @@ export default class Home extends React.Component {
                                 </CardBody>
                             </Card>
                         </CardDeck>
-                    </div>*/}
+                    </div>
                     
                 </div>
             </div>
