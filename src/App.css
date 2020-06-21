@@ -246,6 +246,16 @@ div#homeJumbotron.jumbotron {
   font-size: 14px;
 }
 
+#dreamerPic {
+  width: 50px;
+  display: block;
+  border-radius: 500px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
 #deleteButt {
   background-color: #56494E !important;
   border-width: 0;
@@ -277,7 +287,6 @@ div#homeJumbotron.jumbotron {
 #replyButt {
   background-color: #56494E !important;
   border-width: 0;
-  margin-left: 10px;
   margin-bottom: 9px;
   font-variant: small-caps;
   padding-bottom: 8px;
@@ -387,6 +396,11 @@ div#homeJumbotron.jumbotron {
 
 #submitCommentButton {
   background-color: #56494E !important;
+  margin: 20px;
+}
+
+#cancelButton {
+  margin: 20px;
 }
 
 #saveChanges {
@@ -403,7 +417,15 @@ div#homeJumbotron.jumbotron {
 }
 
 #comment {
-  font-variant: small-caps;
+  font-style: normal;
+  font-weight: bolder;
+  margin: 10px;  
+}
+
+#commentOnTitle {
+  font-style: italic;
+  font-weight: lighter;
+  margin: 10px;
 }
 
 #viewButton {
@@ -462,4 +484,14 @@ div#homeJumbotron.jumbotron {
   padding: 6px;
   border: 5px solid white;
   background-color: #56494E;
+}
+
+#publicCommentPic {
+  width: 50px;
+  display: block;
+  border-radius: 500px;
+  float: right;
+  margin-right: 15px;
+  margin-top: 16px;
+  margin-bottom: 4px;
 }

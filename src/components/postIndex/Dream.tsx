@@ -73,7 +73,7 @@ export default class Dream extends React.Component<AcceptedProps, DreamState> {
                     <CardHeader>
 
                         <CardTitle id="md">{this.props.dream.title}</CardTitle>
-                        <img id="commentPic" src={this.props.user.profilePic} height="50" alt=""/>
+                        <img id="dreamerPic" src={this.state.dream.user?.profilePic} height="50" alt=""/>
                         <p id="cardUser">by {this.state.dream.user?.username}</p>
                         <p id="dreamCat">{this.props.dream.category}</p>
                     </CardHeader>
