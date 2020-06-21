@@ -1,6 +1,7 @@
 import React, { FormEvent } from 'react';
 import {Form, FormGroup, Label, Button, Input, Row, Col} from "reactstrap";
 import APIURL from '../../helper/Environment';
+import DefaultProfilePic from '../../assets/defaultProfilePic.gif';
 
 let errorTimeout: NodeJS.Timeout;
 
@@ -22,7 +23,7 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
         this.state = {
             username: '',
             password: '',
-            profilePic: '',
+            profilePic: DefaultProfilePic,
             nsfwOk: false,
             error: ''
         }
