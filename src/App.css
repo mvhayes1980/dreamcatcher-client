@@ -5,7 +5,6 @@ body {
 
 /* Auth Login/SignUp */
 #authDiv {
-  background-repeat: no-repeat;
   background-size: 600px;
   height: 10vh;
   width: 50vw;
@@ -14,6 +13,7 @@ body {
 }
 
 #authAlphaDiv {
+  background-repeat: no-repeat;
   margin: auto;
   margin-top: 6px;
   margin-bottom: 65px;
@@ -25,6 +25,13 @@ body {
   border: double 8px grey;
 
 }
+
+/* #authLabel {
+  text-align: center;
+  background-color: #56494E;
+  color: whitesmoke;
+  font-variant: small-caps;
+} */
 
 #togglebutt.btn.btn-secondary { 
   display: block;
@@ -111,12 +118,13 @@ a.nav-link {
 /* Home Jumbotron */
 div#homeJumbotron.jumbotron {
   text-align: center;
-  background-image: url('./assets/dreamcatcherjumbotronfinal.gif');
+  background-image: url('./assets/dreamalish2.gif');
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh !important;
   width: 100% !important;
   border-radius: 0;
+  margin-bottom: 10px;
 }
 
 #clearButton {
@@ -326,6 +334,10 @@ div#homeJumbotron.jumbotron {
   min-height: 100%;
 }
 
+#logoFoot {
+  padding: 4px;
+}
+
 #publicIndexDiv {
   width: 95%;
   margin: auto;
@@ -354,6 +366,11 @@ div#homeJumbotron.jumbotron {
 .trademark img {
   margin-top: 10px;
 
+}
+
+#socialMedia {
+  display: inline-flex;
+  align-content: right;
 }
 
 #publicDreams {
@@ -402,4 +419,47 @@ div#homeJumbotron.jumbotron {
   margin-bottom: 100px;
 }
 
+#aboutDiv {
+  display: inline-block;
+  margin: 15px;
+  padding: 6px;
+  color: white;
+  background-color: #56494E;
+  border: 5px solid white;
+}
 
+#contactDiv {
+  display: inline-block;
+  width: auto;
+  margin: 15px;
+  padding: 6px;
+  color: white;
+  background-color: #56494E;
+  border: 5px solid white;
+}
+
+#socialMediaDiv {
+  margin: 15px;
+  padding: 6px;
+  display: inline-block;
+  color: white;
+  background-color: #56494E;
+  border: 5px solid white;
+}
+
+#socialMediaDiv a{
+  margin: 2px;
+  padding: 2px;
+  font-variant: small-caps;
+  font-size: larger;
+}
+
+#aboutLogo {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 15px;
+  padding: 6px;
+  border: 5px solid white;
+  background-color: #56494E;
+}
