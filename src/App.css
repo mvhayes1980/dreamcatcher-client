@@ -118,12 +118,13 @@ a.nav-link {
 /* Home Jumbotron */
 div#homeJumbotron.jumbotron {
   text-align: center;
-  background-image: url('./assets/dreamalishposnegpos40comp.gif');
+  background-image: url('./assets/dreamalish2.gif');
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh !important;
   width: 100% !important;
   border-radius: 0;
+  margin-bottom: 10px;
 }
 
 #clearButton {
@@ -424,7 +425,7 @@ div#homeJumbotron.jumbotron {
   padding: 6px;
   color: white;
   background-color: #56494E;
-  border: 5px solid #56494E;
+  border: 5px solid white;
 }
 
 #contactDiv {
@@ -434,7 +435,7 @@ div#homeJumbotron.jumbotron {
   padding: 6px;
   color: white;
   background-color: #56494E;
-  border: 5px solid #56494E;
+  border: 5px solid white;
 }
 
 #socialMediaDiv {
@@ -443,7 +444,7 @@ div#homeJumbotron.jumbotron {
   display: inline-block;
   color: white;
   background-color: #56494E;
-  border: 5px solid #56494E;
+  border: 5px solid white;
 }
 
 #socialMediaDiv a{
@@ -459,5 +460,6 @@ div#homeJumbotron.jumbotron {
   height: 250px;
   margin: 15px;
   padding: 6px;
-  border: 5px solid #56494E;
+  border: 5px solid white;
+  background-color: #56494E;
 }
