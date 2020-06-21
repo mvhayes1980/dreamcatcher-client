@@ -7,10 +7,6 @@ type AcceptedProps = {
 
 }
 
-type ContactState = {
-
-}
-
 
 export default class Contact extends React.Component <AcceptedProps> {
     constructor(props: AcceptedProps) {
@@ -24,12 +20,27 @@ export default class Contact extends React.Component <AcceptedProps> {
     render(){
         return(
             <div>
+                <h4>Contact Us</h4>
                 <Form action="https://formspree.io/meqlelzo" method="post" role="form">
                     <FormGroup>
-                        <label>Email:</label>
-                        <input type="email" name="email" placeholder='email'/>
-                        <label>Message:</label>
-                        <input type="textarea" name="message" placeholder="message"/>
+                        <Col>
+                            <Row>
+                            <Label>Email:</Label>
+                            <Input type="email" name="email" placeholder='email'/>
+                            </Row>
+                        </Col>
+                        <Col>
+                            <Row>
+                            <Label>Subject</Label>
+                            <Input type="text" name="subject" placeholder="subject"/>
+                            </Row>
+                        </Col>
+                        <Col>
+                            <Row>
+                            <Label>Message:</Label>
+                            <Input type="textarea" name="message" placeholder="message"/>
+                            </Row>
+                        </Col>
                     </FormGroup>
 
                 </Form>

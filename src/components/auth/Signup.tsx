@@ -48,7 +48,7 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                     this.props.updateToken(res.sessionToken);
                 })
         } else {
-            this.setState({error: "y'all bustas betta put yo dang names in"})
+            this.setState({error: "All fields require text."})
         }
 
     }
@@ -70,20 +70,21 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                 <Row>
                     <Col>
                         <FormGroup>
-                            <Label htmlFor="username">Dreamer's Name</Label>
-                            <Input value={this.state.username} onChange={(e) => {this.setState({username:e.target.value})}} name="username"/>
-                            <Label htmlFor="password">Password</Label>
-                            <Input value={this.state.password} onChange={(e) => {this.setState({password:e.target.value})}}type="password" name="password"/>
+                            <Label id="authLabel" htmlFor="username">Dreamer's Name</Label>
+                            <Input value={this.state.username} onChange={(e) => {this.setState({username:e.target.value})}} name="username" placeholder="create dreamername"/>
+                            <br/>
+                            <Label id="authLabel" htmlFor="password">Password</Label>
+                            <Input value={this.state.password} onChange={(e) => {this.setState({password:e.target.value})}}type="password" name="password" placeholder="password" />
                         </FormGroup>
                     {/* </Col>
                     <Col> */}
                         <FormGroup>
-                            <Label htmlFor="profilePic" >Profile Picture</Label>
+                            <Label id="authLabel" htmlFor="profilePic" >Profile Picture</Label>
                             <Input value={this.state.profilePic} placeholder="Image URL" onChange={(e) => {this.setState({profilePic:e.target.value})}} name="profilePic" type="text" />
-
+                            <br/>
                             <Row>
                                 <Col>
-                                    <Label htmlFor="nsfwOk">NSFW content OK?</Label>
+                                    <Label id="authLabel" htmlFor="nsfwOk">NSFW content OK?</Label>
                                 </Col>
                             </Row>
                             <Row>
