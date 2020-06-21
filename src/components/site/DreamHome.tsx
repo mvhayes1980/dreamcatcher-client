@@ -9,7 +9,9 @@ import UserData from '../userData/UserData';
 import PostIndex from '../postIndex/PostIndex';
 import { DreamType, CommentType, UserType } from '../../types/CustomTypes';
 import PublicIndex from '../publicDreams/PublicIndex';
-import DreamCatcher from '../../assets/dreamcatcherWhite.png';
+import DreamCatcher from '../../assets/image.png';
+import About from '../site/footer/About';
+
 
 type AcceptedProps = {
     clearToken: () => void
@@ -88,14 +90,15 @@ export default class Home extends React.Component <AcceptedProps, HomeState> {
                             <Route exact path="/profile"><UserData clearToken={() => {this.props.clearToken()}} fetchUser={()=>this.fetchUser()} sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
                             <Route exact path="/myposts"><PostIndex user={this.state.user}fetchUser={()=>this.fetchUser()}dreams={this.state.user.dreams} sessionToken={this.props.sessionToken}/></Route>
                             <Route exact path="/public"><PublicIndex fetchUser={()=>this.fetchUser()}sessionToken={this.props.sessionToken} user={this.state.user}/></Route>
+                            <Route exact path="/about"><About sessionToken={this.props.sessionToken}/></Route>
                         </Switch>
                         : null}
 
                         <div id="mainFoot">
                             <div className="leftFoot">
                                 <div className='trademark'>
-                                    <a href="/"><img src={DreamCatcher} height='30px' alt="" /></a>
-                                    <a><p>DreamCatcher</p></a>
+                                    <a href="/"><img src={DreamCatcher} height='30px' alt="" id="logoFoot"/></a>
+                                    <a><p>Dreamalish</p></a>  
                                 </div>
                             </div>
                         </div>

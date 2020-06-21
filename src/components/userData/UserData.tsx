@@ -124,7 +124,7 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
         return(
             <div>
                 {this.state.done ? <Redirect to="/"/> : null}
-                <h1 id="profileHead">MY DREAMCATCHER PROFILE</h1>
+                <h1 id="profileHead">MY DREAMALISH PROFILE</h1>
                 <Row id="profileRow">
                     <Col md={{size: 6, offset:3}}>
                         <Form id="profileForm" onSubmit={(e: FormEvent) => this.handleSubmit(e)}>

@@ -12,16 +12,8 @@ export default class Home extends React.Component {
         return (
             <div className='mainDiv'>
                 <div className="body">
-                    <Jumbotron id="homeJumbotron">
-                        {/* <h1 className="display-3">Welcome to Dream Catcher!</h1>
-                            <hr className="my-2" />
-                            <p></p>
-                            <p>Share your dreams and encounter others' realities.</p> */}
-                        <p className="lead">
-                            {/* <Button color="primary">Learn More</Button> */}
-                        </p>
-                    </Jumbotron>
-                    <div className="cards">
+                    <Jumbotron id="homeJumbotron"/>
+                    {/* <div className="cards">
                         <CardDeck>
                             <Card className="midCard">
                                 <CardImg top width="100%" src={Dream} alt="Card image cap" />
@@ -38,7 +30,7 @@ export default class Home extends React.Component {
                                 </CardBody>
                             </Card>
                         </CardDeck>
-                    </div>
+                    </div> */}
                     
                 </div>
             </div>
