@@ -41,10 +41,17 @@ export default class Contact extends React.Component <AcceptedProps> {
                             <Input type="textarea" name="message" placeholder="message"/>
                             </Row>
                         </Col>
+                        <br/>
+                        <Col>
+                            <Row>
+                                <Input type="submit" value="send"/>
+                            </Row>
+                        </Col>
                     </FormGroup>
-
+                    
                 </Form>
             </div>
         )
     }
 }
+
