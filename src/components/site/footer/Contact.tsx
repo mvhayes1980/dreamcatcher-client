@@ -48,7 +48,7 @@ export default class Contact extends React.Component <AcceptedProps> {
                             </Row>
                         </Col>
                     </FormGroup>
-
+                    
                 </Form>
             </div>
         )
