@@ -124,7 +124,7 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
         return(
             <div>
                 {this.state.done ? <Redirect to="/"/> : null}
-                <h1 id="profileHead">MY DREAMALISH PROFILE</h1>
+                <h1 id="profileHead">My Dreamalish Profile</h1>
                 <Row id="profileRow">
                     <Col md={{size: 6, offset:3}}>
                         <Form id="profileForm" onSubmit={(e: FormEvent) => this.handleSubmit(e)}>
@@ -147,7 +147,7 @@ export default class UserData extends React.Component <AcceptedProps, UserDataSt
                             <Row>
                                 <Col>
                                     <FormGroup>
-                                        <Label htmlFor="profilePic" >Profile Picture</Label>
+                                        <Label htmlFor="profilePic" >Profile Picture/GIF</Label>
                                         <Input value={this.state.user.profilePic} placeholder="Image URL" onChange={(e) => {
                                             let newUser = this.state.user;
                                             newUser.profilePic = e.target.value;
