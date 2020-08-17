@@ -84,11 +84,11 @@ export default class PublicIndex extends React.Component<AcceptedProps, PublicIn
 
 
                     </Col>
-                    <Col className="newDream">
+                    {/* <Col className="newDream">
 
                         <DreamCreate sessionToken={this.props.sessionToken} fetchUser={() => { this.props.fetchUser() }} />
 
-                    </Col>
+                    </Col> */}
                 </Row>
             </div>
         )
