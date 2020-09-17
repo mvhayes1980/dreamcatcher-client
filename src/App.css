@@ -5,24 +5,28 @@ body {
 
 /* Auth Login/SignUp */
 #authDiv {
-  background-size: 600px;
-  height: 10vh;
-  width: 50vw;
+  background-size: auto;
+  height: 40vh;
+  width: 100vw;
   margin: auto;
   margin-top: 6%;
 }
 
 #authAlphaDiv {
-  background-repeat: no-repeat;
+  color: whitesmoke;
+  font-weight: bolder;
+  font-size: medium;
+  background-image: url('../src/assets/sunrise.gif');
+  background-repeat: repeat;
   margin: auto;
   margin-top: 6px;
   margin-bottom: 65px;
   border-radius: 50px;
-  width: 80%;
+  width: 41%;
   padding: 10px;
   height: auto;
   background-color: rgba(179, 139, 109, 0.24);
-  border: double 8px grey;
+  border: double 8px black;
 
 }
 
@@ -145,6 +149,7 @@ div#homeJumbotron.jumbotron {
 
 #profileHead {
   text-align: center;
+  font-size: 18px;
   margin-bottom: 30px;
   font-weight: 700;
   font-variant: small-caps;
@@ -233,7 +238,7 @@ div#homeJumbotron.jumbotron {
 
 #cardUser {
   font-style: italic;
-  font-size: 12px;
+  font-size: 16px;
   margin-bottom: 5px !important;
 }
 
@@ -243,7 +248,7 @@ div#homeJumbotron.jumbotron {
 }
 
 #cardContent {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #dreamerPic {
@@ -254,6 +259,11 @@ div#homeJumbotron.jumbotron {
   margin-right: 15px;
   margin-top: 16px;
   margin-bottom: 4px;
+}
+#dreamTime {
+  font-size: smaller;
+  color: slategrey;
+  font-weight: lighter;
 }
 
 #deleteButt {

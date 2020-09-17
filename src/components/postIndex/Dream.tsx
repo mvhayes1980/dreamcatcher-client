@@ -76,6 +76,7 @@ export default class Dream extends React.Component<AcceptedProps, DreamState> {
                         <img id="dreamerPic" src={this.state.dream.user?.profilePic} height="50" alt=""/>
                         <p id="cardUser">by {this.state.dream.user?.username}</p>
                         <p id="dreamCat">{this.props.dream.category}</p>
+                        <p id="dreamTime">{this.props.dream.createdAt?.toLocaleString}</p>
                     </CardHeader>
                     <CardBody>
                         <p id="cardContent">{this.state.hideNSFW ? "(This content contains NSFW material)..." : this.props.dream.content}</p>

@@ -58,7 +58,7 @@ export default class DreamComment extends React.Component<AcceptedProps, DreamCo
                 <Form onSubmit={(e: FormEvent)=>{this.handleSubmit(e)}}>
                     <FormGroup>
                         <h5 id="comment"> Comment on</h5><h4 id="commentOnTitle">{this.props.dream.title}</h4>
-                        <Input style={{width:"80%", margin: "auto"}} type="textarea" draggable="false" maxLength={250} value={this.state.comment.content} onChange={(e) => {
+                        <Input style={{width:"80%", margin: "auto"}} type="textarea" draggable="false" maxLength={255} value={this.state.comment.content} onChange={(e) => {
                             let comment = this.state.comment;
                             comment.content = e.target.value;
                             this.setState({comment: comment});
