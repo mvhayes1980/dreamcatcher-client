@@ -67,7 +67,8 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
     render() {
         return(
             <Form onSubmit={(e: FormEvent) => this.handleSubmit(e)}>
-                <h3 id='signup'>SIGNUP</h3>
+                <h3 id='signup'>Dreamalish</h3>
+                <h4 id='signup'>Register</h4>
                 <Row>
                     <Col>
                         <FormGroup>
