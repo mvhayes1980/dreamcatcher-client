@@ -93,7 +93,6 @@ export default class Home extends React.Component <AcceptedProps, HomeState> {
                             <Route exact path="/about"><About sessionToken={this.props.sessionToken}/></Route>
                         </Switch>
                         : null}
-
                         <div id="mainFoot">
                             <div className="leftFoot">
                                 <div className='trademark'>

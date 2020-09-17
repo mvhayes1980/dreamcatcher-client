@@ -93,12 +93,12 @@ export default class DreamEdit extends React.Component <AcceptedProps, DreamEdit
                         </Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="content">Content: {this.state.dream.content.length}/250</Label>
+                        <Label htmlFor="content">Content: {this.state.dream.content.length}/255</Label>
                         <Input name="content" value={this.state.dream.content} onChange={(e) => {
                             let dream = this.state.dream;
                             dream.content = e.target.value;
                             this.setState({dream: dream});
-                        }} type="textarea" draggable="false" maxLength={250}></Input>
+                        }} type="textarea" draggable="false" maxLength={255}></Input>
                     </FormGroup>
                     <FormGroup>
                         <Row>

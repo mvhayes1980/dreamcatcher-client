@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { DreamType, CommentType, UserType } from '../../types/CustomTypes';
 import { Card, CardBody, CardHeader, CardTitle, Button } from 'reactstrap';
 import APIURL from '../../helper/Environment';
@@ -8,9 +8,7 @@ import DreamComment from '../publicDreams/DreamComment';
 
 type AcceptedProps = {
     sessionToken: string,
-
     dreams: DreamType[],
-
     fetchUser: () => void
 
     user: UserType
