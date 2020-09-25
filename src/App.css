@@ -6,7 +6,7 @@ body {
 /* Auth Login/SignUp */
 #authDiv {
   background-size: auto;
-  height: 40vh;
+  height: auto;
   width: 100vw;
   margin: auto;
   margin-top: 6%;
@@ -22,7 +22,7 @@ body {
   margin-top: 6px;
   margin-bottom: 65px;
   border-radius: 50px;
-  width: 41%;
+  width: 60%;
   padding: 10px;
   height: auto;
   background-color: rgba(179, 139, 109, 0.24);
