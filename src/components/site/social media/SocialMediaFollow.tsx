@@ -30,7 +30,7 @@ export default function SocialMediaFollow() {
                 <FontAwesomeIcon icon={faLinkedin} size="3x" />  LinkedIn
                 </a>
                 <br/>
-                <a href="https://www.facebook.com/Dreamalish-113313620416693/"
+                <a href="https://twitter.com/dreamalish"
                 className="twitter social">
                 <FontAwesomeIcon icon={faTwitter} size="3x" />Twitter
                 </a>
