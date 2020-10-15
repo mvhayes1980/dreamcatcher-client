@@ -25,10 +25,7 @@ class App extends React.Component<{}, AppState> {
     if(localStorage.getItem('dreamSessionToken')) {
       let token: string | null = localStorage.getItem('dreamSessionToken')
       this.setState({sessionToken: token != null ? token : ""});
-      console.log("sessionToken:", localStorage.getItem('dreamSessionToken'));
-
-
-
+      // console.log("sessionToken:", localStorage.getItem('dreamSessionToken'));
     }
 
 
@@ -36,8 +33,7 @@ class App extends React.Component<{}, AppState> {
 
   updateToken(newToken: string) {
     localStorage.setItem('dreamSessionToken', newToken);
-    this.setState({sessionToken: newToken});
-    console.log("sessionToken changed to:", newToken)
+    this.setState({sessionToken: newToken})
   }
 
   clearToken() {

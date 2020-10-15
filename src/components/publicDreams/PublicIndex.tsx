@@ -28,7 +28,7 @@ export default class PublicIndex extends React.Component<AcceptedProps, PublicIn
     }
 
     fetchDreams() {
-        this.setState({dreams: [], categoryChanged: false});
+        this.setState({ dreams: [], categoryChanged: false });
 
         fetch(`${APIURL}/api/dreams/${this.state.category}`, {
             method: 'get',
@@ -37,10 +37,10 @@ export default class PublicIndex extends React.Component<AcceptedProps, PublicIn
                 'authorization': this.props.sessionToken
             }
         })
-            .then(res=>res.json())
+            .then(res => res.json())
             .then(res => {
                 console.log("FETCHED DREAMS", res);
-                this.setState({dreams: res.response});
+                this.setState({ dreams: res.response });
             })
     }
 
@@ -56,13 +56,13 @@ export default class PublicIndex extends React.Component<AcceptedProps, PublicIn
 
 
     render() {
-        return(
-            <div>
-                <h1>Public Dreams</h1>
+        return (
+            <div id="publicIndexDiv">
+                <h1 id="publicDreams">Public Dreams</h1>
                 <Row>
                     <Col>
-                    
-                        <Input name="category" value={this.state.category} type="select" onChange={e => {this.setState({category: e.target.value, categoryChanged: true})}}>
+
+                        <Input id="dreamType" name="category" value={this.state.category} type="select" onChange={e => { this.setState({ category: e.target.value, categoryChanged: true }) }}>
                             <option value={"joy"}>Joy</option>
                             <option value={"despair"}>Despair</option>
                             <option value={"fear"}>Fear</option>
@@ -78,15 +78,17 @@ export default class PublicIndex extends React.Component<AcceptedProps, PublicIn
                         </Input>
 
 
-                        {this.state.dreams !== [] ? 
-                        <PublicDreamTable fetchUser={()=> {this.props.fetchUser()}} user={this.props.user} sessionToken={this.props.sessionToken} dreams={this.state.dreams}/>
-                        : null}
+                        {this.state.dreams !== [] ?
+                            <PublicDreamTable fetchUser={() => { this.props.fetchUser() }} user={this.props.user} sessionToken={this.props.sessionToken} dreams={this.state.dreams} />
+                            : null}
 
 
                     </Col>
-                    <Col>
-                        <DreamCreate sessionToken={this.props.sessionToken} fetchUser={()=>{this.props.fetchUser()}}/>
-                    </Col>
+                    {/* <Col className="newDream">
+
+                        <DreamCreate sessionToken={this.props.sessionToken} fetchUser={() => { this.props.fetchUser() }} />
+
+                    </Col> */}
                 </Row>
             </div>
         )

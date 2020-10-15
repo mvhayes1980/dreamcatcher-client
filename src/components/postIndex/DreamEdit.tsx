@@ -59,10 +59,10 @@ export default class DreamEdit extends React.Component <AcceptedProps, DreamEdit
                         content: "",
                         isNSFW: false,
                         title: ""
-                    })}}>X</Button>
+                    })}}>CANCEL</Button>
                 <ModalBody>
                 <Form onSubmit={(e: FormEvent)=> {this.updateDream(e)}}>
-                    <h3>Update Dream</h3>
+                    <h3 id="updateDream">Update Dream</h3>
                     <FormGroup>
                         <Label htmlFor="title">Title:</Label>
                         <Input name="title" value={this.state.dream.title} onChange={e => {
@@ -93,12 +93,12 @@ export default class DreamEdit extends React.Component <AcceptedProps, DreamEdit
                         </Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="content">Content: {this.state.dream.content.length}/250</Label>
+                        <Label htmlFor="content">Content: {this.state.dream.content.length}/255</Label>
                         <Input name="content" value={this.state.dream.content} onChange={(e) => {
                             let dream = this.state.dream;
                             dream.content = e.target.value;
                             this.setState({dream: dream});
-                        }} type="textarea" draggable="false" maxLength={250}></Input>
+                        }} type="textarea" draggable="false" maxLength={255}></Input>
                     </FormGroup>
                     <FormGroup>
                         <Row>
@@ -115,7 +115,7 @@ export default class DreamEdit extends React.Component <AcceptedProps, DreamEdit
                         </Row>
                     </FormGroup>
                     <FormGroup>
-                        <Button disabled={(!this.state.dream.content && !this.state.dream.title)} type="submit">UPDATE</Button>
+                        <Button id="updateButton" disabled={(!this.state.dream.content && !this.state.dream.title)} type="submit">UPDATE</Button>
                     </FormGroup>
                 </Form>
                 </ModalBody>

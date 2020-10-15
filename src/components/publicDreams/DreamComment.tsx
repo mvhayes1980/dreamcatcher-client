@@ -54,7 +54,19 @@ export default class DreamComment extends React.Component<AcceptedProps, DreamCo
     render() {
         return(
             <Modal isOpen={true}>
-                <Button onClick={()=> {
+                <hr/>
+                <Form onSubmit={(e: FormEvent)=>{this.handleSubmit(e)}}>
+                    <FormGroup>
+                        <h5 id="comment"> Comment on</h5><h4 id="commentOnTitle">{this.props.dream.title}</h4>
+                        <Input style={{width:"80%", margin: "auto"}} type="textarea" draggable="false" maxLength={255} value={this.state.comment.content} onChange={(e) => {
+                            let comment = this.state.comment;
+                            comment.content = e.target.value;
+                            this.setState({comment: comment});
+                        }}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Button id="submitCommentButton" type="submit">SUBMIT COMMENT</Button>
+                        <Button id="cancelButton" onClick={()=> {
                     this.props.setDreamToComment({
                         category: "",
                         content: "",
@@ -62,19 +74,7 @@ export default class DreamComment extends React.Component<AcceptedProps, DreamCo
                         title: "",
                         comments: []
                     })
-                }}>X</Button>
-                <hr/>
-                <Form onSubmit={(e: FormEvent)=>{this.handleSubmit(e)}}>
-                    <FormGroup>
-                        <h3>Comment: </h3>
-                        <Input style={{width:"80%", margin: "auto"}} type="textarea" value={this.state.comment.content} onChange={(e) => {
-                            let comment = this.state.comment;
-                            comment.content = e.target.value;
-                            this.setState({comment: comment});
-                        }}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Button type="submit">SUBMIT COMMENT</Button>
+                }}>CANCEL</Button>
                     </FormGroup>
                 </Form>
             </Modal>

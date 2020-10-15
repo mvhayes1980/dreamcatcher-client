@@ -16,10 +16,13 @@ export default class Comment extends React.Component <AcceptedProps, {}> {
         return(
                 <div>
                     <hr/>
-                    <p>{this.props.comment.user?.username} says:</p>
-                    <p>{this.props.comment.content}</p>
-                    <Button color="danger" onClick={()=> this.props.deleteComment(this.props.comment)}>Delete</Button>
-                    <Button color="warning" onClick={()=> this.props.setCommentToEdit(this.props.comment)}>Edit</Button>
+                    
+                    <p id="commentUser">{this.props.comment.user?.username} says:</p>
+                    <p id="commentCont">{this.props.comment.content}</p>
+                    <img id="publicCommentPic" src={this.props.comment.user?.profilePic}/>
+                    <Button color="danger" id="deleteButt" onClick={()=> this.props.deleteComment(this.props.comment)}>DELETE COMMENT</Button>
+                    <Button color="warning" id="editButt" onClick={()=> this.props.setCommentToEdit(this.props.comment)}>EDIT COMMENT</Button>
+                    
                 </div>
         )
     }

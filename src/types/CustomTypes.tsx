@@ -17,6 +17,8 @@ export type DreamType = {
         title: string,
         id?: number,
         user?: UserType,
+        createdAt?: number,
+        updatedAt?: number,
         comments: CommentType[]
 }
 export type UserType = {
