@@ -11,6 +11,7 @@ type AcceptedProps = {
 
 type SignupState = {
     username: string,
+    email: string,
     password: string,
     profilePic: string,
     nsfwOk: boolean,
@@ -22,6 +23,7 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
         super(props)
         this.state = {
             username: '',
+            email: '',
             password: '',
             profilePic: DefaultProfilePic,
             nsfwOk: false,
@@ -39,6 +41,7 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                 },
                 body: JSON.stringify({
                     username: this.state.username,
+                    email: this.state.email,
                     password: this.state.password,
                     profilePic: this.state.profilePic,
                     nsfwOk: this.state.nsfwOk
@@ -74,6 +77,9 @@ export default class Signup extends React.Component <AcceptedProps, SignupState>
                         <FormGroup>
                             <Label id="authLabel" htmlFor="username">Dreamer's Name</Label>
                             <Input value={this.state.username} onChange={(e) => {this.setState({username:e.target.value})}} name="username" placeholder="create dreamername"/>
+                            <br/>
+                            <Label id="authLabel" htmlFor="email">Email</Label>
+                            <Input value={this.state.email} onChange={(e) => {this.setState({email:e.target.value})}} name="email" placeholder="enter email address"/>
                             <br/>
                             <Label id="authLabel" htmlFor="password">Password</Label>
                             <Input value={this.state.password} onChange={(e) => {this.setState({password:e.target.value})}}type="password" name="password" placeholder="password" />
