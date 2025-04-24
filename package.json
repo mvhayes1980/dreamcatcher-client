@@ -20,8 +20,8 @@
     "react-announcement": "^1.1.2",
     "react-dom": "^16.13.1",
     "react-notifications-component": "^2.4.0",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
+    "react-router": "^7.5.2",
+    "react-router-dom": "^7.5.2",
     "react-scripts": "^3.4.3",
     "reactstrap": "^8.4.1",
     "typescript": "^3.9.5"
